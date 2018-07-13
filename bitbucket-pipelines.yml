@@ -25,9 +25,8 @@ pipelines:
           caches:
             - node
           script:
-            - echo "-----Run Node-----"
-            - npm install
-            - npm test
+            - echo "-----Install Node-----" > npm install
+            - echo "-----Test Node-----" > npm test
           artifacts:
             - target/**
       - step:
