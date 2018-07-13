@@ -25,6 +25,7 @@ pipelines:
           caches:
             - node
           script:
+            - echo "-----Run Node-----"
             - npm install
             - npm test
           artifacts:
@@ -32,6 +33,7 @@ pipelines:
       - step:
           name: Build Docker Image
           script:
+           - echo "-----Build Docker Image-----"
            - export IMAGE_LATEST=$REGISTRY_DOMAIN/$REGISTRY_NAME/$APPNAME:latest
            - export REPOSITORY_NAME=$REGISTRY_DOMAIN/$REGISTRY_NAME/$APPNAME
            - export IMAGE_CURRENT=$REPOSITORY_NAME:$BITBUCKET_COMMIT
