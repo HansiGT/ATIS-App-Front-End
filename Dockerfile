@@ -13,7 +13,7 @@ RUN npm install
 # RUN npm install --only=production
 
 # Bundle app source
-COPY Cordova/www/*.* .
+COPY . .
 
 EXPOSE 8080
 
