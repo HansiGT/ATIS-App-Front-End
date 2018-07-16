@@ -1,23 +1,20 @@
-FROM openjdk:8-jdk
+FROM node:8
 
-# Node.js
+# Create app directory
+WORKDIR /usr/src/app
 
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - \
-	&& apt-get install -y nodejs \
-	&& rm -rf /var/lib/apt/lists/* /var/cache/apt/*
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY package*.json ./
 
-# Xvfb
+RUN npm install
+# If you are building your code for production
+# RUN npm install --only=production
 
-RUN apt-get update -qqy \
-	&& apt-get -qqy install xvfb \
-	&& rm -rf /var/lib/apt/lists/* /var/cache/apt/*
+# Bundle app source
+# COPY . .
 
-# Google Chrome
+EXPOSE 8080
 
-RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
-	&& echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list \
-	&& apt-get update -qqy \
-	&& apt-get -qqy install google-chrome-stable \
-	&& rm /etc/apt/sources.list.d/google-chrome.list \
-	&& rm -rf /var/lib/apt/lists/* /var/cache/apt/* \
-	&& sed -i 's/"$HERE\/chrome"/xvfb-run "$HERE\/chrome" --no-sandbox/g' /opt/google/chrome/google-chrome
+CMD [ "npm", "start" ]
