@@ -17,38 +17,55 @@ var para1 = document.createElement("p");
 para1.id = "para1";
 para1.style.top = unit*142 + "px";
 para1.className = "para";
-var node1 = document.createTextNode("Aktuelle Auslastung: " + data.percentageOccupied + "%");
-para1.appendChild(node1);
+para1.innerHTML = "Aktuelle Auslastung: " + data.percentageOccupied + "%";
+
 
 var para2 = document.createElement("p");
+para2.id = "para2";
 para2.className = "para";
 para2.style.top = unit*142 + "px";
-var node2 = document.createTextNode("Belegte Laptop-Plätze: ");
-para2.appendChild(node2);
+para2.innerHTML = "Belegte Laptop-Plätze: ";
+
 
 var para3 = document.createElement("p");
+para3.id = "para3";
 para3.className = "para";
 para3.style.top = unit*142 + "px";
-var node3 = document.createTextNode("Belegte Rechner: " + data.occupied);
-para3.appendChild(node3);
+para3.innerHTML = "Belegte Rechner: " + data.occupied;
 
+var container = document.getElementById("container");
 var body = document.getElementsByTagName("BODY")[0];
-body.appendChild(para1);
-body.appendChild(para2);
-body.appendChild(para3);
+container.appendChild(para1);
+container.appendChild(para2);
+container.appendChild(para3);
 }
 
 //Put the rooms on layout
 function iterateRooms(data) {
 data.rooms.forEach(function(room) {
-	var roomDiv = document.createElement('div');
-	roomDiv.className = "square";
-	roomDiv.id = "room" + room.id;
-	roomDiv.style.left = unit*room.pos[0].x + "px";
-	roomDiv.style.top = unit*room.pos[0].y + "px";
-	roomDiv.style.width = unit*(room.pos[1].x - room.pos[0].x) + "px";
-	roomDiv.style.height = unit*(room.pos[3].y - room.pos[0].y) + "px";
-	document.getElementById("container").appendChild(roomDiv);
+
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    context.beginPath();
+    context.moveTo(unit*room.pos[0].x, unit*room.pos[0].y);
+    context.lineTo(unit*room.pos[1].x, unit*room.pos[1].y);
+		context.moveTo(unit*room.pos[1].x, unit*room.pos[1].y);
+    context.lineTo(unit*room.pos[2].x, unit*room.pos[2].y);
+		context.moveTo(unit*room.pos[2].x, unit*room.pos[2].y);
+    context.lineTo(unit*room.pos[3].x, unit*room.pos[3].y);
+		context.moveTo(unit*room.pos[3].x, unit*room.pos[3].y);
+    context.lineTo(unit*room.pos[0].x, unit*room.pos[0].y);
+		context.closePath();
+    context.stroke();
+
+	// var roomDiv = document.createElement('div');
+	// roomDiv.className = "square";
+	// roomDiv.id = "room" + room.id;
+	// roomDiv.style.left = unit*room.pos[0].x + "px";
+	// roomDiv.style.top = unit*room.pos[0].y + "px";
+	// roomDiv.style.width = unit*(room.pos[1].x - room.pos[0].x) + "px";
+	// roomDiv.style.height = unit*(room.pos[3].y - room.pos[0].y) + "px";
+	// document.getElementById("container").appendChild(roomDiv);
 
 	/*var doorDiv = document.createElement('div');
 	doorDiv.className = "square";
@@ -84,7 +101,7 @@ function iteratePoolElements(data) {
 			document.getElementById("" + board.id ).style.backgroundImage = "url('https://webadmin.informatik.kit.edu/pool/img/win_free.png')";
 			break;
 		case "Laptop":
-			document.getElementById("" + board.id ).style.backgroundImage = "url('https://serving.photos.photobox.com/68520215cd406f9aec5c4341a0a87b49930e590450b90c2bce0840d7fb9539190d35da20.jpg')";
+			document.getElementById("" + board.id ).style.backgroundImage = "url('https://serving.photos.photobox.com/281944168551a46df5af4a102cc66386797df109483bb8ff961830b9d45e37e7f06cc8db.jpg')";
 			break;
 		case "printer":
 				document.getElementById("" + board.id ).style.backgroundImage = "url('https://webadmin.informatik.kit.edu/pool/img/kyocera.png')";
@@ -105,38 +122,48 @@ function iteratePoolElements(data) {
 }
 
 function iterateCurrentStates(data) {
+const UNKNOWN_STATUS = 0;
 const LINUX_AVAILABLE = 1;
 const WINDOWS_AVAILABLE = 2;
 const LINUX_OCCUPIED = 3;
 const WINDOWS_OCCUPIED = 4;
 const LAPTOP_AVAILABLE = 5;
 const LAPTOP_OCCUPIED = 6;
-    
+
 data.data.forEach(function(currentState) {
-  var stateIconURL;
-  switch (currentState.state) {
-    case WINDOWS_AVAILABLE:
-      stateIconURL = "https://webadmin.informatik.kit.edu/pool/img/win_free.png";
-      break;
-    case WINDOWS_OCCUPIED:
-      stateIconURL = "https://webadmin.informatik.kit.edu/pool/img/win_busy.png";
-      break;
-    case LINUX_AVAILABLE:
-      stateIconURL = "img/linux_free2.png";
-      break;
-    case LINUX_OCCUPIED:
-      stateIconURL = "https://webadmin.informatik.kit.edu/pool/img/linux_busy2.png";
-      break;
-    case LAPTOP_AVAILABLE:
-      stateIconURL = "https://serving.photos.photobox.com/68520215cd406f9aec5c4341a0a87b49930e590450b90c2bce0840d7fb9539190d35da20.jpg";
-      break;
-    case LAPTOP_OCCUPIED:
-      stateIconURL = "https://serving.photos.photobox.com/394002731fca1441d9191729fce1de2de9c814f4fee1c075869535db1ab91d7cb46f70aa.jpg";
-      break;
-    default:
-  }
-	var temp = document.getElementById("" + currentState.type + currentState.id);
-	temp.className = "square";
-    temp.style.backgroundImage = "url('" + stateIconURL +"')";
+		updateCurrentStateOfElement(currentState);
 })
+
+function updateCurrentStateOfElement(element) {
+	var stateIconURL;
+	switch (element.state) {
+		case UNKNOWN_STATUS:
+			stateIconURL = "https://webadmin.informatik.kit.edu/pool/img/unknown2.png";
+			break;
+		case WINDOWS_AVAILABLE:
+			stateIconURL = "https://webadmin.informatik.kit.edu/pool/img/win_free.png";
+			break;
+		case WINDOWS_OCCUPIED:
+			stateIconURL = "https://webadmin.informatik.kit.edu/pool/img/win_busy.png";
+			break;
+		case LINUX_AVAILABLE:
+			stateIconURL = "img/linux_free2.png";
+			break;
+		case LINUX_OCCUPIED:
+			stateIconURL = "https://webadmin.informatik.kit.edu/pool/img/linux_busy2.png";
+			break;
+		case LAPTOP_AVAILABLE:
+			stateIconURL = "https://serving.photos.photobox.com/68520215cd406f9aec5c4341a0a87b49930e590450b90c2bce0840d7fb9539190d35da20.jpg";
+			break;
+		case LAPTOP_OCCUPIED:
+			stateIconURL = "https://serving.photos.photobox.com/394002731fca1441d9191729fce1de2de9c814f4fee1c075869535db1ab91d7cb46f70aa.jpg";
+			break;
+		default:
+	}
+	var temp = document.getElementById("" + element.type + element.id);
+	temp.className = "square";
+	temp.style.backgroundImage = "url('" + stateIconURL +"')";
+}
+
+
 }
