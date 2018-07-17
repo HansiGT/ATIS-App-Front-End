@@ -1,9 +1,9 @@
 var request = new XMLHttpRequest();
-request.open('GET', 'https://pool.cm.tm.kit.edu/layout', true);
+request.open('GET', 'https://workspace.cm.tm.kit.edu/layout', true);
 var request2 = new XMLHttpRequest();
-request2.open('GET', 'https://pool.cm.tm.kit.edu/currentState', true);
+request2.open('GET', 'https://utilization.cm.tm.kit.edu/currentState', true);
 var request3 = new XMLHttpRequest();
-request3.open('GET', 'https://pool.cm.tm.kit.edu/currentUtilization', true);
+request3.open('GET', 'https://utilization.cm.tm.kit.edu/currentUtilization', true);
 request.onload = function() {
     var data = JSON.parse(this.response);
     if (request.status >= 200 && request.status < 400) {
