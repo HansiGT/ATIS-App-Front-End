@@ -105,10 +105,10 @@ function iteratePoolElements(data) {
 }
 
 function iterateCurrentStates(data) {
-const WINDOWS_AVAILABLE = 1;
-const WINDOWS_OCCUPIED = 2;
-const LINUX_AVAILABLE = 3;
-const LINUX_OCCUPIED = 4;
+const LINUX_AVAILABLE = 1;
+const WINDOWS_AVAILABLE = 2;
+const LINUX_OCCUPIED = 3;
+const WINDOWS_OCCUPIED = 4;
 const LAPTOP_AVAILABLE = 5;
 const LAPTOP_OCCUPIED = 6;
     
