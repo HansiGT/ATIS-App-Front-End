@@ -9,23 +9,82 @@
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=100, minimum-scale=1, width=device-width">
         <meta http-equiv="content-type" content="text/html;charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            /* Create four equal columns that floats next to each other */
+            .column {
+                float: left;
+                width: 25%;
+                padding: 10px;
+            }
+
+            /* Clear floats after the columns */
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+            /* center text in div*/
+            div.row {
+                text-align: center;
+            }
+
+            /* center images in div*/
+            img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            /* Responsive layout - makes a two column-layout instead of four columns */
+            @media screen and (max-width: 900px) {
+                .column  {
+                    width: 50%;
+                }
+            }
+
+            /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+            @media screen and (max-width: 600px) {
+                .column  {
+                    width: 100%;
+                }
+            }
+        </style>
     </head>
 
     <body>
         <div>        
-            <h1>Wilkommen auf der Haupseite</h1>
+            <h3>Wilkommen auf der Haupseite</h3>
         </div>
 
-        <!--link to current util-->
-        <div>
-            <ul>
-                <li><a href="index.html">Aktuelle Auslastung</a></li>
-                <li>Öffnungszeiten</li>
-                <li>Reservierungen</li>
-                <li>Layout Editor</li>
-            </ul>        
+        <!---responsive grid (pls work)--->
+        <div class="row">
+            <div class="column">
+                <p><a href="index.html"><img src="img/homePageIcons/img_curr_util.png" width="200" height=auto></a></p>
+                <p><a href="index.html">Aktuelle Auslastung</a></p>
+            </div>
+            <div class="column">
+                <p><img src="img/homePageIcons/img_opening_hours.png" width="200" height=auto></p>
+                <p>Öffnungszeiten</p>
+            </div>
+            <div class="column">
+                <p><img src="img/homePageIcons/img_reservation.png" width="200" height=auto></p>
+                <p>Reservierungen</p>
+            </div>
+            <div class="column">
+                <p><img src="img/homePageIcons/img_statistic.png" width="200" height=auto></p>
+                <p>Statistiken</p>
+            </div>
+            <div class="column">
+                <p><img src="img/homePageIcons/img_layout_editor.png" width="200" height=auto></p>
+                <p>Layout Editor</p>
+            </div>
         </div>
-
+        
     </body>
-
 </html>

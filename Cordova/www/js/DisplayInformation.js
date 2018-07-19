@@ -1,3 +1,4 @@
+//not used??
 var para1 = document.createElement("p");
 para1.id = "para1";
 para1.style.top = unit * 142 + "px";

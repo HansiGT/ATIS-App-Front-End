@@ -5,7 +5,7 @@ function paragraphs(data) {
     para1.id = "para1";
     para1.style.top = unit * 142 + "px";
     para1.className = "para";
-    para1.innerHTML = "Aktuelle Auslastung aaaa: " + data.percentageOccupied + "%";
+    para1.innerHTML = "Aktuelle Auslastung: " + data.percentageOccupied + "%";
 
 
     var para2 = document.createElement("p");

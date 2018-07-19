@@ -1,3 +1,4 @@
+//not used??
 var unit = screen.width / 162;
 
 for (var i = 0; i < 108; i++) {

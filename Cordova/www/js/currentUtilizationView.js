@@ -109,19 +109,19 @@ function iterateCurrentStates(data) {
         var stateIconURL;
         switch (element.state) {
             case UNKNOWN_STATUS:
-                stateIconURL = "https://webadmin.informatik.kit.edu/pool/img/unknown2.png";
+                stateIconURL = "img/state_unknown.png";
                 break;
             case WINDOWS_AVAILABLE:
-                stateIconURL = "https://webadmin.informatik.kit.edu/pool/img/win_free.png";
+                stateIconURL = "img/win_free.png";
                 break;
             case WINDOWS_OCCUPIED:
-                stateIconURL = "https://webadmin.informatik.kit.edu/pool/img/win_busy.png";
+                stateIconURL = "img/win_busy.png";
                 break;
             case LINUX_AVAILABLE:
                 stateIconURL = "img/linux_free2.png";
                 break;
             case LINUX_OCCUPIED:
-                stateIconURL = "https://webadmin.informatik.kit.edu/pool/img/linux_busy2.png";
+                stateIconURL = "img/linux_busy2.png";
                 break;
             case LAPTOP_AVAILABLE:
                 stateIconURL = "https://serving.photos.photobox.com/68520215cd406f9aec5c4341a0a87b49930e590450b90c2bce0840d7fb9539190d35da20.jpg";
