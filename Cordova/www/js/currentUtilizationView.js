@@ -1,11 +1,35 @@
-var unit = screen.width / 162;
-for (var i = 0; i < 108; i++) {
-    for (var j = 0; j < 159; j++) {
+//create grid for layout (why 162?????????????????????)
+//var unit = screen.width / 162;
+
+var unit = 0;
+
+//amount of units in either direction
+var vertCount = 100;
+var horCount = 142;
+
+//size of a unit
+var vertUnit  = window.innerHeight / vertCount;
+var horUnit  = window.innerWidth / horCount;
+//if the resulting grid is too big for the screen the other unit szie will be used
+if (vertUnit * horCount < window.innerWidth) {
+    unit = vertUnit
+} else if (horUnit * vertCount <= window.innerHeight) {
+    unit = horUnit
+} else {
+    console.log("screen size doesn't allow for propper fit")
+}
+
+//why 159 why 108?????????????
+for (var i = 0; i < vertCount; i++) {
+    for (var j = 0; j < horCount; j++) {
+
         var board = document.createElement('div');
         board.className = "square";
         board.id = "" + j + ", " + i;
+        //position of the square
         board.style.left = unit * j + "px";
-        board.style.top = unit * (i + 32) + "px";
+        board.style.top = unit * i + "px";
+
         board.style.border = "white";
         document.getElementById("container").appendChild(board);
     }
@@ -18,14 +42,28 @@ function iterateRooms(data) {
         var canvas = document.getElementById('myCanvas');
         var context = canvas.getContext('2d');
         context.beginPath();
+
+        //draw outline of room (not hard coded)
+        for(var i = 0; i < room.length - 1; i++) {
+            context.moveTo(unit * room.pos[i].x, unit * room.pos[i].y);
+            context.lineTo(unit * room.pos[i + 1].x, unit * room.pos[i + 1].y); 
+        }
+
+        /*
+        //draw rooms, hard coded (why?)
         context.moveTo(unit * room.pos[0].x, unit * room.pos[0].y);
         context.lineTo(unit * room.pos[1].x, unit * room.pos[1].y);
+
         context.moveTo(unit * room.pos[1].x, unit * room.pos[1].y);
         context.lineTo(unit * room.pos[2].x, unit * room.pos[2].y);
+
         context.moveTo(unit * room.pos[2].x, unit * room.pos[2].y);
         context.lineTo(unit * room.pos[3].x, unit * room.pos[3].y);
+
         context.moveTo(unit * room.pos[3].x, unit * room.pos[3].y);
         context.lineTo(unit * room.pos[0].x, unit * room.pos[0].y);
+        */
+
         context.closePath();
         context.stroke();
 
@@ -55,14 +93,18 @@ function iterateRooms(data) {
 
 function iteratePoolElements(data) {
     data.poolElements.forEach(function (poolElement) {
-
+        //place pool elements
         var board = document.createElement('div');
         board.className = "square";
+        //get the id
         board.id = poolElement.type + poolElement.id;
+        //set the position
         board.style.left = unit * poolElement.pos.x + "px";
-        board.style.top = unit * (poolElement.pos.y + 32) + "px";
+        board.style.top = unit * poolElement.pos.y + "px";
+        //set size
         board.style.width = unit * poolElement.width + "px";
         board.style.height = unit * poolElement.length + "px";
+
         document.getElementById("container").appendChild(board);
 
         //Put icon of the pool element in the layout
@@ -130,6 +172,7 @@ function iterateCurrentStates(data) {
                 stateIconURL = "https://serving.photos.photobox.com/394002731fca1441d9191729fce1de2de9c814f4fee1c075869535db1ab91d7cb46f70aa.jpg";
                 break;
             default:
+                console.log("could not set image of element: " + element.id);
         }
         var temp = document.getElementById("" + element.type + element.id);
         temp.className = "square";

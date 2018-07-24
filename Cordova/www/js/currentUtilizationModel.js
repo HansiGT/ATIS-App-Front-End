@@ -11,11 +11,13 @@ requestLayout.onload = function () {
     if (requestLayout.status >= 200 && requestLayout.status < 400) {
         iterateRooms(data);
         iteratePoolElements(data);
+
         requestCurrentState.onload = function () {
             data = JSON.parse(this.response);
-            currentStateData = JSON.parse(this.response);
+            currentStateData = JSON.parse(this.response);            
             if (requestLayout.status >= 200 && requestLayout.status < 400) {
                 iterateCurrentStates(data);
+
                 requestCurrentUtil.onload = function () {
                     data = JSON.parse(this.response);
                     if (requestLayout.status >= 200 && requestLayout.status < 400) {
@@ -66,9 +68,10 @@ function updateCurrentUtilization() {
         requestCurrentUtil.onload = function () {
             data = JSON.parse(this.response);
             if (requestLayout.status >= 200 && requestLayout.status < 400) {
-                document.getElementById("para1").innerHTML = "Aktuelle Auslastung: " + data.percentageOccupied + "%";
-                document.getElementById("para2").innerHTML = "Belegte Laptop-Plätze: ";
-                document.getElementById("para3").innerHTML = "Belegte Rechner: " + data.occupied;
+                //set values of the current state
+                document.getElementById(currPercentId).innerHTML = "Aktuelle Auslastung: " + data.percentageOccupied + "%";
+                document.getElementById(currLaptopId).innerHTML = "Belegte Laptop-Plätze: ";
+                document.getElementById(currPCId).innerHTML = "Belegte Rechner: " + data.occupied;
             }
         }
         requestCurrentUtil.send();
