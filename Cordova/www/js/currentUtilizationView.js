@@ -19,7 +19,7 @@ if (vertUnit * horCount < window.innerWidth) {
     console.log("screen size doesn't allow for propper fit")
 }
 
-//why 159 why 108?????????????
+//why 159 why 108 (original values?????????????
 for (var i = 0; i < vertCount; i++) {
     for (var j = 0; j < horCount; j++) {
 
@@ -42,12 +42,15 @@ function iterateRooms(data) {
         var canvas = document.getElementById('myCanvas');
         var context = canvas.getContext('2d');
         context.beginPath();
-
+        
         //draw outline of room (not hard coded)
-        for(var i = 0; i < room.length - 1; i++) {
+        for(var i = 0; i < room.pos.length - 1; i++) {
             context.moveTo(unit * room.pos[i].x, unit * room.pos[i].y);
             context.lineTo(unit * room.pos[i + 1].x, unit * room.pos[i + 1].y); 
         }
+        //connect to the first
+        context.moveTo(unit * room.pos[room.pos.length - 1].x, unit * room.pos[room.pos.length - 1].y);
+        context.lineTo(unit * room.pos[0].x, unit * room.pos[0].y);
 
         /*
         //draw rooms, hard coded (why?)
@@ -61,9 +64,8 @@ function iterateRooms(data) {
         context.lineTo(unit * room.pos[3].x, unit * room.pos[3].y);
 
         context.moveTo(unit * room.pos[3].x, unit * room.pos[3].y);
-        context.lineTo(unit * room.pos[0].x, unit * room.pos[0].y);
-        */
-
+        context.lineTo(unit * room.pos[0].x, unit * room.pos[0].y);*/
+        
         context.closePath();
         context.stroke();
 
