@@ -2,7 +2,7 @@
 <html>
 
     <head>
-        <title>Current Utilization</title>
+        <title>Aktuelle Auslastung</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'; media-src *; img-src * filesystem: data:">
@@ -13,21 +13,25 @@
     </head>
 
     <body>
-        <h3>Herzlich Willkommen</h3>
-
+        <div id="menuNavigation">
+        </div>
         <!--create the current util image(?)-->
         <div id="container">
-            <canvas id="myCanvas" width="2000" height="1800"></canvas>
+            <canvas id="roomCanvas"></canvas>
+			<canvas id="doorCanvas"></canvas>
+			<script>
+				var roomCanvas = document.getElementById("roomCanvas");
+				roomCanvas.width = screen.width;
+				roomCanvas.height = screen.width;
+				var doorCanvas = document.getElementById("doorCanvas");
+				doorCanvas.width = screen.width;
+				doorCanvas.height = screen.width;
+			</script>
         </div>
         
         <!---create the current status text--->
         <div id="statusContainer">    
             <p id="statusParagraph"></p>
-        </div>
-        
-        <!--link home-->
-        <div>
-            <a href="index.html">Zurück zur Hauptseite</a>       
         </div>
 
         <script
@@ -38,11 +42,5 @@
         <script src="js/currentUtilizationModel.js"></script>
         <script src="js/currentUtilizationView.js"></script>
         <script src="js/currentStateView.js"></script>
-        <!--<script src="js/Layout.js"></script>
-<script src="js/CurrentState.js"></script>
-<script src="js/DisplayLayout.js"></script>
-<script src="js/UpdateCurrentState.js"></script>
-<script src="js/DisplayInformation.js"></script>-->
-
     </body>
 </html>

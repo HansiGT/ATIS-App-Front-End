@@ -1,3 +1,53 @@
+function Sidenav(){
+    var menu = document.getElementById("menuNavigation");
+    var mySidenav = document.createElement("DIV");
+    mySidenav.id = "mySidenav";
+    mySidenav.className = "sidenav";
+    menu.insertBefore(mySidenav, menu.childNodes[0]);
+    var link1 = document.createElement('a');
+    link1.innerHTML = "&times;";
+    link1.href = "#";
+    link1.className = "closebtn";
+    mySidenav.appendChild(link1);
+    link1.addEventListener("click", function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    })
+    var link2 = document.createElement('a');
+    link2.innerHTML = "Startseite";
+    link2.href = "index.html";
+    var link3 = document.createElement('a');
+    link3.innerHTML = "Vorhersage";
+    link3.href = "prediction.html";
+    var link4 = document.createElement('a');
+    link4.innerHTML = "Reservierung";
+    link4.href = "reservation.html";
+    var link5 = document.createElement('a');
+    link5.innerHTML = "Öffnungszeiten";
+    link5.href = "openingHours.html";
+    var link6 = document.createElement('a');
+    link6.innerHTML = "Statistiken";
+    link6.href = "statistics.html";
+    mySidenav.appendChild(link1);
+    mySidenav.appendChild(link2);
+    mySidenav.appendChild(link3);
+    mySidenav.appendChild(link4);
+    mySidenav.appendChild(link5);
+    mySidenav.appendChild(link6);
+    var open = document.createElement("SPAN");
+    open.style = "font-size:30px;cursor:pointer";
+    open.addEventListener("click", function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+    })
+    open.innerHTML = "&#9776; Menü";
+    console.log(container);
+    menu.insertBefore(open, menu.childNodes[0]);
+    var title = document.createElement("H1");
+    title.innerHTML = "Aktuelle Auslastung";
+    menu.insertBefore(title, menu.childNodes[1]);
+}
+
+Sidenav();
+
 //create grid for layout (why 162?????????????????????)
 //var unit = screen.width / 162;
 
@@ -39,9 +89,10 @@ for (var i = 0; i < vertCount; i++) {
 function iterateRooms(data) {
     data.rooms.forEach(function (room) {
 
-        var canvas = document.getElementById('myCanvas');
+        var canvas = document.getElementById('roomCanvas');
         var context = canvas.getContext('2d');
         context.beginPath();
+        
         
         //draw outline of room (not hard coded)
         for(var i = 0; i < room.pos.length - 1; i++) {
@@ -52,8 +103,9 @@ function iterateRooms(data) {
         context.moveTo(unit * room.pos[room.pos.length - 1].x, unit * room.pos[room.pos.length - 1].y);
         context.lineTo(unit * room.pos[0].x, unit * room.pos[0].y);
 
-        /*
+        
         //draw rooms, hard coded (why?)
+        /*
         context.moveTo(unit * room.pos[0].x, unit * room.pos[0].y);
         context.lineTo(unit * room.pos[1].x, unit * room.pos[1].y);
 
@@ -64,33 +116,25 @@ function iterateRooms(data) {
         context.lineTo(unit * room.pos[3].x, unit * room.pos[3].y);
 
         context.moveTo(unit * room.pos[3].x, unit * room.pos[3].y);
-        context.lineTo(unit * room.pos[0].x, unit * room.pos[0].y);*/
-        
+        context.lineTo(unit * room.pos[0].x, unit * room.pos[0].y);
+        */
         context.closePath();
         context.stroke();
 
-        // var roomDiv = document.createElement('div');
-        // roomDiv.className = "square";
-        // roomDiv.id = "room" + room.id;
-        // roomDiv.style.left = unit*room.pos[0].x + "px";
-        // roomDiv.style.top = unit*room.pos[0].y + "px";
-        // roomDiv.style.width = unit*(room.pos[1].x - room.pos[0].x) + "px";
-        // roomDiv.style.height = unit*(room.pos[3].y - room.pos[0].y) + "px";
-        // document.getElementById("container").appendChild(roomDiv);
-
-        /*var doorDiv = document.createElement('div');
-        doorDiv.className = "square";
-        doorDiv.id = "door" + room.id;
-        doorDiv.style.left = unit*room.door.posX + "px";
-        doorDiv.style.top = unit*(room.door.posY - room.door.length)  + "px";
-        doorDiv.style.width = unit*room.door.length + "px";
-        doorDiv.style.height = unit*room.door.length + "px";
-        doorDiv.style.backgroundImage =  "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrxXHiFbm8YWyyIqBfRfwXgo_ZJpSuc2eLQh4t9XuA6r_equ7H0g')";
-        doorDiv.style.border = "white";
-        document.getElementById("container").appendChild(doorDiv);*/
+        room.portalGates.forEach(function(portalGate) {
+		if (portalGate.type == "door") {
+			var canvas = document.getElementById('doorCanvas');
+	    var doorContext = canvas.getContext('2d');
+			doorContext.beginPath();
+			doorContext.moveTo(unit*portalGate.pos[0].x, unit*portalGate.pos[0].y - 10);
+			doorContext.lineTo(unit*portalGate.pos[1].x, unit*portalGate.pos[1].y -	 10);
+			doorContext.lineWidth = 20;
+			doorContext.strokeStyle="#1e90ff";
+			doorContext.closePath();
+	    doorContext.stroke();
+        }
+        })
     })
-    /*The ATIS-door is vertical => rotate 90 degrees
-    document.getElementById("door0").style.transform = "rotate(90deg)";*/
 }
 
 function iteratePoolElements(data) {
