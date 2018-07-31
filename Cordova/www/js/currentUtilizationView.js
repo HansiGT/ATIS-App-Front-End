@@ -1,52 +1,3 @@
-function Sidenav(){
-    var menu = document.getElementById("menuNavigation");
-    var mySidenav = document.createElement("DIV");
-    mySidenav.id = "mySidenav";
-    mySidenav.className = "sidenav";
-    menu.insertBefore(mySidenav, menu.childNodes[0]);
-    var link1 = document.createElement('a');
-    link1.innerHTML = "&times;";
-    link1.href = "#";
-    link1.className = "closebtn";
-    mySidenav.appendChild(link1);
-    link1.addEventListener("click", function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-    })
-    var link2 = document.createElement('a');
-    link2.innerHTML = "Startseite";
-    link2.href = "index.html";
-    var link3 = document.createElement('a');
-    link3.innerHTML = "Vorhersage";
-    link3.href = "prediction.html";
-    var link4 = document.createElement('a');
-    link4.innerHTML = "Reservierung";
-    link4.href = "reservation.html";
-    var link5 = document.createElement('a');
-    link5.innerHTML = "Öffnungszeiten";
-    link5.href = "openingHours.html";
-    var link6 = document.createElement('a');
-    link6.innerHTML = "Statistiken";
-    link6.href = "statistics.html";
-    mySidenav.appendChild(link1);
-    mySidenav.appendChild(link2);
-    mySidenav.appendChild(link3);
-    mySidenav.appendChild(link4);
-    mySidenav.appendChild(link5);
-    mySidenav.appendChild(link6);
-    var open = document.createElement("SPAN");
-    open.style = "font-size:30px;cursor:pointer";
-    open.addEventListener("click", function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
-    })
-    open.innerHTML = "&#9776; Menü";
-    console.log(container);
-    menu.insertBefore(open, menu.childNodes[0]);
-    var title = document.createElement("H1");
-    title.innerHTML = "Aktuelle Auslastung";
-    menu.insertBefore(title, menu.childNodes[1]);
-}
-
-Sidenav();
 
 //create grid for layout (why 162?????????????????????)
 //var unit = screen.width / 162;
@@ -55,7 +6,7 @@ var unit = 0;
 
 //amount of units in either direction
 var vertCount = 100;
-var horCount = 142;
+var horCount = 162;
 
 //size of a unit
 var vertUnit  = window.innerHeight / vertCount;
@@ -69,21 +20,6 @@ if (vertUnit * horCount < window.innerWidth) {
     console.log("screen size doesn't allow for propper fit")
 }
 
-//why 159 why 108 (original values?????????????
-for (var i = 0; i < vertCount; i++) {
-    for (var j = 0; j < horCount; j++) {
-
-        var board = document.createElement('div');
-        board.className = "square";
-        board.id = "" + j + ", " + i;
-        //position of the square
-        board.style.left = unit * j + "px";
-        board.style.top = unit * i + "px";
-
-        board.style.border = "white";
-        document.getElementById("container").appendChild(board);
-    }
-}
 
 //Put the rooms on layout
 function iterateRooms(data) {
@@ -92,18 +28,18 @@ function iterateRooms(data) {
         var canvas = document.getElementById('roomCanvas');
         var context = canvas.getContext('2d');
         context.beginPath();
-        
-        
+
+
         //draw outline of room (not hard coded)
         for(var i = 0; i < room.pos.length - 1; i++) {
             context.moveTo(unit * room.pos[i].x, unit * room.pos[i].y);
-            context.lineTo(unit * room.pos[i + 1].x, unit * room.pos[i + 1].y); 
+            context.lineTo(unit * room.pos[i + 1].x, unit * room.pos[i + 1].y);
         }
         //connect to the first
         context.moveTo(unit * room.pos[room.pos.length - 1].x, unit * room.pos[room.pos.length - 1].y);
         context.lineTo(unit * room.pos[0].x, unit * room.pos[0].y);
 
-        
+
         //draw rooms, hard coded (why?)
         /*
         context.moveTo(unit * room.pos[0].x, unit * room.pos[0].y);
@@ -126,9 +62,9 @@ function iterateRooms(data) {
 			var canvas = document.getElementById('doorCanvas');
 	    var doorContext = canvas.getContext('2d');
 			doorContext.beginPath();
-			doorContext.moveTo(unit*portalGate.pos[0].x, unit*portalGate.pos[0].y - 10);
-			doorContext.lineTo(unit*portalGate.pos[1].x, unit*portalGate.pos[1].y -	 10);
-			doorContext.lineWidth = 20;
+			doorContext.moveTo(unit*portalGate.pos[0].x, unit*portalGate.pos[0].y - 2*unit);
+			doorContext.lineTo(unit*portalGate.pos[1].x, unit*portalGate.pos[1].y - 2*unit);
+			doorContext.lineWidth = unit*3;
 			doorContext.strokeStyle="#1e90ff";
 			doorContext.closePath();
 	    doorContext.stroke();
