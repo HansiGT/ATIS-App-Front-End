@@ -99,7 +99,7 @@ function iteratePoolElements(data) {
                 document.getElementById("" + board.id).style.backgroundImage = "url('https://serving.photos.photobox.com/281944168551a46df5af4a102cc66386797df109483bb8ff961830b9d45e37e7f06cc8db.jpg')";
                 break;
             case "printer":
-                document.getElementById("" + board.id).style.backgroundImage = "url('https://webadmin.informatik.kit.edu/pool/img/kyocera.png')";
+                document.getElementById("" + board.id).style.backgroundImage = "url('img/printer.svg')";
                 break;
             case "wall":
                 document.getElementById("" + board.id).style.backgroundColor = "black";
@@ -133,19 +133,19 @@ function iterateCurrentStates(data) {
         var stateIconURL;
         switch (element.state) {
             case UNKNOWN_STATUS:
-                stateIconURL = "img/state_unknown.png";
+                stateIconURL = "img/state_unknown.svg";
                 break;
             case WINDOWS_AVAILABLE:
-                stateIconURL = "img/win_free.png";
+                stateIconURL = "img/win_free.svg";
                 break;
             case WINDOWS_OCCUPIED:
-                stateIconURL = "img/win_busy.png";
+                stateIconURL = "img/win_busy.svg";
                 break;
             case LINUX_AVAILABLE:
-                stateIconURL = "img/linux_free2.png";
+                stateIconURL = "img/linux_free.svg";
                 break;
             case LINUX_OCCUPIED:
-                stateIconURL = "img/linux_busy2.png";
+                stateIconURL = "img/linux_busy.svg";
                 break;
             case LAPTOP_AVAILABLE:
                 stateIconURL = "https://serving.photos.photobox.com/68520215cd406f9aec5c4341a0a87b49930e590450b90c2bce0840d7fb9539190d35da20.jpg";
