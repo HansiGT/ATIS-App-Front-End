@@ -2,76 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7900269a-2cff-426f-9aa0-e1824466f71f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Cordova/node_modules/cordova-android/node_modules/ansi/examples/cursorPosition.js" beforeDir="false" afterPath="$PROJECT_DIR$/Cordova/node_modules/cordova-android/node_modules/ansi/examples/cursorPosition.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cordova/node_modules/cordova-android/node_modules/plist/dist/plist-parse.js" beforeDir="false" afterPath="$PROJECT_DIR$/Cordova/node_modules/cordova-android/node_modules/plist/dist/plist-parse.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cordova/node_modules/cordova-android/node_modules/plist/dist/plist.js" beforeDir="false" afterPath="$PROJECT_DIR$/Cordova/node_modules/cordova-android/node_modules/plist/dist/plist.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cordova/node_modules/cordova-android/node_modules/q/q.js" beforeDir="false" afterPath="$PROJECT_DIR$/Cordova/node_modules/cordova-android/node_modules/q/q.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cordova/node_modules/cordova-android/node_modules/underscore/underscore.js" beforeDir="false" afterPath="$PROJECT_DIR$/Cordova/node_modules/cordova-android/node_modules/underscore/underscore.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cordova/node_modules/cordova-android/node_modules/xmldom/dom.js" beforeDir="false" afterPath="$PROJECT_DIR$/Cordova/node_modules/cordova-android/node_modules/xmldom/dom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cordova/www/js/DisplayInformation.js" beforeDir="false" afterPath="$PROJECT_DIR$/Cordova/www/js/DisplayInformation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cordova/www/js/DisplayLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/Cordova/www/js/DisplayLayout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cordova/www/js/UpdateCurrentState.js" beforeDir="false" afterPath="$PROJECT_DIR$/Cordova/www/js/UpdateCurrentState.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cordova/www/js/currentUtilizationModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/Cordova/www/js/currentUtilizationModel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cordova/www/js/currentUtilizationView.js" beforeDir="false" afterPath="$PROJECT_DIR$/Cordova/www/js/currentUtilizationView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/tsconfig.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="808207328">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.2" value="2" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="currentUtilizationModel.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Cordova/www/js/currentUtilizationModel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-399">
-              <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="currentUtilizationView.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Cordova/www/js/currentUtilizationView.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="133" column="50" lean-forward="true" selection-start-line="133" selection-start-column="50" selection-end-line="133" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DisplayInformation.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Cordova/www/js/DisplayInformation.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="36" lean-forward="true" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DisplayLayout.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Cordova/www/js/DisplayLayout.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="40" column="45" lean-forward="true" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UpdateCurrentState.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Cordova/www/js/UpdateCurrentState.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -132,42 +87,8 @@
       <path value="$PROJECT_DIR$/Cordova/node_modules/cordova-android/node_modules/xmldom/package.json" />
       <path value="$PROJECT_DIR$/Cordova/node_modules/cordova-android/package.json" />
       <path value="$PROJECT_DIR$/Cordova/node_modules/cordova-plugin-whitelist/package.json" />
-      <path value="$PROJECT_DIR$/Cordova/platforms/android/cordova/node_modules/abbrev/package.json" />
-      <path value="$PROJECT_DIR$/Cordova/platforms/android/cordova/node_modules/android-versions/package.json" />
-      <path value="$PROJECT_DIR$/Cordova/platforms/android/cordova/node_modules/ansi/package.json" />
-      <path value="$PROJECT_DIR$/Cordova/platforms/android/cordova/node_modules/balanced-match/package.json" />
-      <path value="$PROJECT_DIR$/Cordova/platforms/android/cordova/node_modules/base64-js/package.json" />
-      <path value="$PROJECT_DIR$/Cordova/platforms/android/cordova/node_modules/big-integer/package.json" />
-      <path value="$PROJECT_DIR$/Cordova/platforms/android/cordova/node_modules/bplist-parser/package.json" />
-      <path value="$PROJECT_DIR$/Cordova/platforms/android/cordova/node_modules/brace-expansion/package.json" />
-      <path value="$PROJECT_DIR$/Cordova/platforms/android/cordova/node_modules/concat-map/package.json" />
-      <path value="$PROJECT_DIR$/Cordova/platforms/android/cordova/node_modules/cordova-common/package.json" />
-      <path value="$PROJECT_DIR$/Cordova/platforms/android/cordova/node_modules/cordova-registry-mapper/package.json" />
-      <path value="$PROJECT_DIR$/Cordova/platforms/android/cordova/node_modules/elementtree/package.json" />
-      <path value="$PROJECT_DIR$/Cordova/platforms/android/cordova/node_modules/glob/package.json" />
-      <path value="$PROJECT_DIR$/Cordova/platforms/android/cordova/node_modules/inflight/package.json" />
-      <path value="$PROJECT_DIR$/Cordova/platforms/android/cordova/node_modules/inherits/package.json" />
-      <path value="$PROJECT_DIR$/Cordova/platforms/android/cordova/node_modules/lodash/package.json" />
-      <path value="$PROJECT_DIR$/Cordova/platforms/android/cordova/node_modules/minimatch/package.json" />
-      <path value="$PROJECT_DIR$/Cordova/platforms/android/cordova/node_modules/nopt/package.json" />
-      <path value="$PROJECT_DIR$/Cordova/platforms/android/cordova/node_modules/once/package.json" />
-      <path value="$PROJECT_DIR$/Cordova/platforms/android/cordova/node_modules/os-homedir/package.json" />
-      <path value="$PROJECT_DIR$/Cordova/platforms/android/cordova/node_modules/os-tmpdir/package.json" />
-      <path value="$PROJECT_DIR$/Cordova/platforms/android/cordova/node_modules/osenv/package.json" />
-      <path value="$PROJECT_DIR$/Cordova/platforms/android/cordova/node_modules/path-is-absolute/package.json" />
-      <path value="$PROJECT_DIR$/Cordova/platforms/android/cordova/node_modules/plist/package.json" />
-      <path value="$PROJECT_DIR$/Cordova/platforms/android/cordova/node_modules/properties-parser/package.json" />
-      <path value="$PROJECT_DIR$/Cordova/platforms/android/cordova/node_modules/q/package.json" />
-      <path value="$PROJECT_DIR$/Cordova/platforms/android/cordova/node_modules/sax/package.json" />
-      <path value="$PROJECT_DIR$/Cordova/platforms/android/cordova/node_modules/semver/package.json" />
-      <path value="$PROJECT_DIR$/Cordova/platforms/android/cordova/node_modules/shelljs/package.json" />
-      <path value="$PROJECT_DIR$/Cordova/platforms/android/cordova/node_modules/underscore/package.json" />
-      <path value="$PROJECT_DIR$/Cordova/platforms/android/cordova/node_modules/unorm/package.json" />
-      <path value="$PROJECT_DIR$/Cordova/platforms/android/cordova/node_modules/util-deprecate/package.json" />
-      <path value="$PROJECT_DIR$/Cordova/platforms/android/cordova/node_modules/wrappy/package.json" />
-      <path value="$PROJECT_DIR$/Cordova/platforms/android/cordova/node_modules/xmlbuilder/package.json" />
-      <path value="$PROJECT_DIR$/Cordova/platforms/android/cordova/node_modules/xmldom/package.json" />
       <path value="$PROJECT_DIR$/Cordova/plugins/cordova-plugin-whitelist/package.json" />
+      <path value="$PROJECT_DIR$/my-app/package.json" />
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -181,6 +102,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -196,33 +118,23 @@
             <path>
               <item name="iot_atis_iosb_frontend" type="b2602c69:ProjectViewProjectNode" />
               <item name="iot_atis_iosb_frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="Cordova" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
+              <item name="my-app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="iot_atis_iosb_frontend" type="b2602c69:ProjectViewProjectNode" />
               <item name="iot_atis_iosb_frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="Cordova" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="iot_atis_iosb_frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iot_atis_iosb_frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="Cordova" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="my-app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/my-app" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -249,32 +161,34 @@
       <option name="presentableId" value="Default" />
       <updated>1531928636757</updated>
       <workItem from="1531928638500" duration="734000" />
+      <workItem from="1534017599155" duration="18000" />
+      <workItem from="1534018191556" duration="13000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="734000" />
+    <option name="totallyTimeSpent" value="765000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18020834" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18018967" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32943678" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,46 +198,12 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Cordova/www/js/CurrentState.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Cordova/www/js/Layout.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Cordova/www/js/DisplayInformation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="36" lean-forward="true" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Cordova/www/js/DisplayLayout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="40" column="45" lean-forward="true" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Cordova/www/js/UpdateCurrentState.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Cordova/www/js/currentUtilizationModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-399">
-          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Cordova/www/js/currentUtilizationView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="133" column="50" lean-forward="true" selection-start-line="133" selection-start-column="50" selection-end-line="133" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Cordova/www/js/CurrentState.js" />
+    <entry file="file://$PROJECT_DIR$/Cordova/www/js/Layout.js" />
+    <entry file="file://$PROJECT_DIR$/Cordova/www/js/DisplayInformation.js" />
+    <entry file="file://$PROJECT_DIR$/Cordova/www/js/DisplayLayout.js" />
+    <entry file="file://$PROJECT_DIR$/Cordova/www/js/UpdateCurrentState.js" />
+    <entry file="file://$PROJECT_DIR$/Cordova/www/js/currentUtilizationModel.js" />
+    <entry file="file://$PROJECT_DIR$/Cordova/www/js/currentUtilizationView.js" />
   </component>
 </project>

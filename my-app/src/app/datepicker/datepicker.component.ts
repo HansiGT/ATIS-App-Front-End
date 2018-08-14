@@ -7,8 +7,9 @@ const now = new Date();
 @Component({
   selector: 'ngbd-datepicker-popup',
   templateUrl: './datepicker.component.html',
-  providers: [PredictionService]
+  providers: [ PredictionService ]
 })
+
 export class NgbdDatepickerPopup {
   @Output() myClick = new EventEmitter();
 
@@ -18,8 +19,6 @@ export class NgbdDatepickerPopup {
   constructor(private predictionService: PredictionService) {
     this.model = {year: now.getFullYear(), month: now.getMonth() + 1, day: now.getDate()};
   }
-
-
 
   ngOnInit() {
   }
