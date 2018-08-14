@@ -9,8 +9,9 @@ import { Chart } from 'chart.js';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+    
   value = 0;
-  initData = [1,1,1,1,1,1];
+    initData = [1, 1, 1, 1, 1, 1];
   chart = new Chart('canvas', {
     type: 'bar',
     data: {
@@ -52,7 +53,6 @@ export class AppComponent implements OnInit {
     }
   });
 
-
   constructor(private _prediction: PredictionService) {
   }
 
@@ -68,21 +68,21 @@ export class AppComponent implements OnInit {
                 datasets: [{
                     label: 'Belegte Plätze',
                     data: res,
-                    backgroundColor: [
-                        'rgb(0, 102, 204)',
-                        'rgb(0, 102, 204)',
-                        'rgb(0, 102, 204)',
-                        'rgb(0, 102, 204)',
-                        'rgb(0, 102, 204)',
-                        'rgb(0, 102, 204)'
+                    backgroundColor: [            
+                        'rgb(50, 161, 137)',
+                        'rgb(50, 161, 137)',
+                        'rgb(50, 161, 137)',
+                        'rgb(50, 161, 137)',
+                        'rgb(50, 161, 137)',
+                        'rgb(50, 161, 137)'
                     ],
                     borderColor: [
-                        'rgb(0, 102, 204)',
-                        'rgb(0, 102, 204)',
-                        'rgb(0, 102, 204)',
-                        'rgb(0, 102, 204)',
-                        'rgb(0, 102, 204)',
-                        'rgb(0, 102, 204)'
+                        'rgb(50, 161, 137)',
+                        'rgb(50, 161, 137)',
+                        'rgb(50, 161, 137)',
+                        'rgb(50, 161, 137)',
+                        'rgb(50, 161, 137)',
+                        'rgb(50, 161, 137)'
                     ],
                     borderWidth: 1
                 }]
@@ -94,7 +94,7 @@ export class AppComponent implements OnInit {
                         ticks: {
                             min: 0,
                             max: 72,
-                            stepSize:15
+                            stepSize: 15
                         }
                     }]
                 }
