@@ -6,6 +6,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbdDatepickerPopup } from "./datepicker/datepicker.component";
 import { FormsModule } from '@angular/forms';
 import { PredictionService } from './prediction.service';
+import { CurrentUtilizationService } from './current-utilization.service';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainNavComponent } from './main-nav/main-nav.component';
@@ -15,6 +16,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { PredictionComponent } from './prediction/prediction.component';
 import { OpeningHoursComponent } from './opening-hours/opening-hours.component';
 import { FrontPageComponent } from './front-page/front-page.component';
+import { CurrentUtilizationComponent } from './current-utilization/current-utilization.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { FrontPageComponent } from './front-page/front-page.component';
     MainNavComponent,
     PredictionComponent,
     OpeningHoursComponent,
-    FrontPageComponent
+    FrontPageComponent,
+    CurrentUtilizationComponent
   ],
   imports: [
     NgbModule.forRoot(),
@@ -39,7 +42,7 @@ import { FrontPageComponent } from './front-page/front-page.component';
     MatListModule,
     AppRoutingModule
   ],
-  providers: [PredictionService],
+  providers: [PredictionService, CurrentUtilizationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

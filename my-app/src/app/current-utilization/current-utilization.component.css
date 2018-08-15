@@ -1,0 +1,38 @@
+
+.square {
+	border: solid 1px #111;
+  width: 5px;
+	height: 5px;
+	float: left;
+	background: #111;
+  display:block;
+	background-size: cover;
+	position: relative;
+}
+
+#container {
+	position: absolute;
+    margin-bottom: 6vw;
+    z-index: -1;
+}
+
+
+.span {
+	vertical-align:top;
+	font-size: 0.8vw;
+}
+
+
+
+h1 {
+	width: 80%;
+	font-size: 6vw;
+	text-align: center;
+    margin: 4vw;
+}
+
+
+.para {
+	position: relative;
+	font-size: 4vw;
+}
