@@ -23,7 +23,7 @@ describe('NgbdDatepickerPopup', () => {
     fixture.detectChanges();
   });
 
-  it('should create the NgbdDatepickerPopup', () => {
+  it('should create', () => {
     const fixture = TestBed.createComponent(NgbdDatepickerPopup);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();

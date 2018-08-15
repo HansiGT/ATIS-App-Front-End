@@ -16,7 +16,6 @@ import { PredictionComponent } from './prediction/prediction.component';
 import { OpeningHoursComponent } from './opening-hours/opening-hours.component';
 import { FrontPageComponent } from './front-page/front-page.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
