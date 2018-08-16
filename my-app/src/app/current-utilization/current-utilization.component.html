@@ -4,13 +4,26 @@
     <head>
         <title>Aktuelle Auslastung</title>
     </head>
+    <h1 id="title">Aktuelle Auslastung</h1>
 
+    <div id="layout">
+      <div *ngFor="let element of poolElements"
+           [ngStyle]="{ width: unit*element.width + 'px',
+                        height: unit*element.length + 'px',
+                        left: unit*element.pos.x + 'px',
+                        top: unit*element.pos.y + 'px',
+                        border: 'solid 1px #000',
+                        position: 'absolute',
+                        display: 'inline-block',
+                        background: 'url(https://webadmin.informatik.kit.edu/pool/img/win_busy.png) no-repeat ',
+                        'background-size': 'contain'
+                      }"
+            [style.height.px] = "unit* element.height">
+             <span [ngStyle]="{	'vertical-align': 'top',
+             	                  'font-size': '2vw'}"> {{ element.id }} </span>
+      </div>
+    </div>
     <body>
-        <h1 id="title">Aktuelle Auslastung</h1>
-        
-        <div id="container">
-        </div>
-
 
     </body>
 </html>
