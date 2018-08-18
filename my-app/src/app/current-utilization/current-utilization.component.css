@@ -11,16 +11,11 @@ img {
 	position: relative;
 }
 
-#test {
-	top: 300px;
-	left: 300px;
-	width: 30px;
-}
+
 
 #layout {
-	width: 300px;
   margin-bottom: 6vw;
-	position: absolute;
+	position: relative;
 }
 
 
@@ -42,4 +37,8 @@ h1 {
 .para {
 	position: relative;
 	font-size: 4vw;
+}
+
+#roomCanvas,#doorCanvas{
+    position:absolute; top:0px; left:0px;
 }

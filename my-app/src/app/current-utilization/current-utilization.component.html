@@ -5,8 +5,11 @@
         <title>Aktuelle Auslastung</title>
     </head>
     <h1 id="title">Aktuelle Auslastung</h1>
+    <body>
 
     <div id="layout">
+      <canvas id="roomCanvas" width="screen.width" height="screen.width"></canvas>
+      <canvas id="doorCanvas" width="200" height="200"></canvas>
       <div *ngFor="let element of poolElements"
            [ngStyle]="{ width: unit*element.width + 'px',
                         height: unit*element.length + 'px',
@@ -15,15 +18,20 @@
                         border: 'solid 1px #000',
                         position: 'absolute',
                         display: 'inline-block',
-                        background: 'url(https://webadmin.informatik.kit.edu/pool/img/win_busy.png) no-repeat ',
+                        background: getBackgroundImageByType(element.type) + ' no-repeat',
                         'background-size': 'contain'
                       }"
-            [style.height.px] = "unit* element.height">
+            id="{{ element.type + element.id }}">
              <span [ngStyle]="{	'vertical-align': 'top',
-             	                  'font-size': '2vw'}"> {{ element.id }} </span>
+             	                  'font-size': '1.5vw'}"> {{ element.id }} </span>
       </div>
+
+      <div>
+        <p [style.top]="unit*180 + 'px'" class="para">Aktuelle Auslastung: {{ percentageOccupied }}%</p>
+        <p [style.top]="unit*180 + 'px'" class="para">Belegte Rechner: {{numberOfOccupiedPCs}} </p>
+      </div>
+
     </div>
-    <body>
 
     </body>
 </html>
