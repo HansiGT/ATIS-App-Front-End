@@ -17,6 +17,9 @@ import { PredictionComponent } from './prediction/prediction.component';
 import { OpeningHoursComponent } from './opening-hours/opening-hours.component';
 import { FrontPageComponent } from './front-page/front-page.component';
 import { CurrentUtilizationComponent } from './current-utilization/current-utilization.component';
+import { LayoutEditorComponent } from './layout-editor/layout-editor.component';
+import { DraggableModule } from './draggable/draggable.module';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +29,8 @@ import { CurrentUtilizationComponent } from './current-utilization/current-utili
     PredictionComponent,
     OpeningHoursComponent,
     FrontPageComponent,
-    CurrentUtilizationComponent
+    CurrentUtilizationComponent,
+    LayoutEditorComponent
   ],
   imports: [
     NgbModule.forRoot(),
@@ -40,7 +44,8 @@ import { CurrentUtilizationComponent } from './current-utilization/current-utili
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DraggableModule
   ],
   providers: [PredictionService, CurrentUtilizationService],
   bootstrap: [AppComponent]
