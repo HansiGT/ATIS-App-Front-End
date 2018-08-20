@@ -7,6 +7,7 @@ import { NgbdDatepickerPopup } from "./datepicker/datepicker.component";
 import { FormsModule } from '@angular/forms';
 import { PredictionService } from './prediction.service';
 import { CurrentUtilizationService } from './current-utilization.service';
+import { OpeningHoursService } from './opening-hours.service';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainNavComponent } from './main-nav/main-nav.component';
@@ -47,7 +48,7 @@ import { DraggableModule } from './draggable/draggable.module';
     AppRoutingModule,
     DraggableModule
   ],
-  providers: [PredictionService, CurrentUtilizationService],
+  providers: [PredictionService, CurrentUtilizationService, OpeningHoursService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
