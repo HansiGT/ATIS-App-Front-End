@@ -1,3 +1,14 @@
+var unit = screen.width/162;
+for (var i = 0; i < 108; i++) {
+	for (var j = 0; j < 159; j++) {
+		var board = document.createElement('div');
+    board.className = "square";
+		board.id = ""+ j + ", " + i ;
+		board.style.left = unit*j + "px";
+		board.style.top = unit*(i+32) + "px";
+    document.getElementById("container").appendChild(board);
+	}
+}
 
 //create grid for layout (why 162?????????????????????)
 //var unit = screen.width / 162;

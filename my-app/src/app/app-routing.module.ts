@@ -5,6 +5,7 @@ import { OpeningHoursComponent } from './opening-hours/opening-hours.component';
 import { FrontPageComponent } from './front-page/front-page.component';
 import { CurrentUtilizationComponent } from './current-utilization/current-utilization.component';
 import { AppComponent } from './app.component';
+import { LayoutEditorComponent } from './layout-editor/layout-editor.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'current-utilization',
     component: CurrentUtilizationComponent
+  },
+  {
+    path: 'layout-editor',
+    component: LayoutEditorComponent
   }
 ];
 

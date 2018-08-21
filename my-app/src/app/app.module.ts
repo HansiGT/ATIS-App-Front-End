@@ -7,6 +7,7 @@ import { NgbdDatepickerPopup } from "./datepicker/datepicker.component";
 import { FormsModule } from '@angular/forms';
 import { PredictionService } from './prediction.service';
 import { CurrentUtilizationService } from './current-utilization.service';
+import { OpeningHoursService } from './opening-hours.service';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainNavComponent } from './main-nav/main-nav.component';
@@ -17,6 +18,9 @@ import { PredictionComponent } from './prediction/prediction.component';
 import { OpeningHoursComponent } from './opening-hours/opening-hours.component';
 import { FrontPageComponent } from './front-page/front-page.component';
 import { CurrentUtilizationComponent } from './current-utilization/current-utilization.component';
+import { LayoutEditorComponent } from './layout-editor/layout-editor.component';
+import { DraggableModule } from './draggable/draggable.module';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +30,8 @@ import { CurrentUtilizationComponent } from './current-utilization/current-utili
     PredictionComponent,
     OpeningHoursComponent,
     FrontPageComponent,
-    CurrentUtilizationComponent
+    CurrentUtilizationComponent,
+    LayoutEditorComponent
   ],
   imports: [
     NgbModule.forRoot(),
@@ -41,9 +46,10 @@ import { CurrentUtilizationComponent } from './current-utilization/current-utili
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DraggableModule
   ],
-  providers: [PredictionService, CurrentUtilizationService],
+  providers: [PredictionService, CurrentUtilizationService, OpeningHoursService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

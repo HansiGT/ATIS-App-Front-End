@@ -1,0 +1,29 @@
+<app-main-nav>
+<div id="container">
+
+  <h1>Layout Editor </h1>
+
+  <div class="container">
+    <div class="row">
+      <div id="layout" class="col-10">   </div>
+      <div id="element" class="col-2">
+          <!-- <div class="box" appDraggable
+            (dragStart)="onDragStart()" (dragMove)="onDragMove($event)" (dragEnd)="onDragEnd($event)">
+            My box
+          </div> -->
+          Width: <input placeholder="width"  [(ngModel)]="elementWidth" />
+          Height: <input placeholder="height"  [(ngModel)]="elementHeight" />
+          <select [(ngModel)]="elementType" id="category">
+           <option value="" disabled selected>Select type</option>
+           <option *ngFor="let elementType of elementTypes" [value]="elementType">{{elementType}}</option>
+         </select>
+          <button (click)="createElement();">Create</button>
+
+          <div id="element0" appDraggable
+            (dragStart)="onDragStart()" (dragMove)="onDragMove($event)" (dragEnd)="onDragEnd($event)">
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+</app-main-nav>

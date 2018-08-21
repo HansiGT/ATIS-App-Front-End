@@ -7,6 +7,7 @@
     [opened]="!(isHandset$ | async)">
     <mat-toolbar color="primary">Menu</mat-toolbar>
     <mat-nav-list>
+<<<<<<< HEAD
       <mat-list-item routerLink="/front-page">
         <mat-icon matListIcon>home</mat-icon>
         <h3 matLine> Startseite </h3>
@@ -23,6 +24,13 @@
         <mat-icon matListIcon>access_time</mat-icon>
         <h3 matLine> Öffnungszeiten </h3>
       </mat-list-item>
+=======
+      <a mat-list-item routerLink="/front-page">Startseite</a>
+      <a mat-list-item routerLink="/current-utilization">Aktuelle Auslastung</a>
+      <a mat-list-item routerLink="/prediction">Vorhersage</a>
+      <a mat-list-item routerLink="/opening-hours">Öffnungszeiten</a>
+      <a mat-list-item routerLink="/layout-editor">Layout-Editor</a>
+>>>>>>> c42f23f46bb2b7981ef7a620211a607b28539be1
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -34,7 +42,7 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>my-app</span>
+      <span>ATIS IOSB</span>
     </mat-toolbar>
     <ng-content></ng-content>
   </mat-sidenav-content>
