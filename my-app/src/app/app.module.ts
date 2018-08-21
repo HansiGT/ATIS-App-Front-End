@@ -11,7 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatGridListModule } from '@angular/material';
 import { AppRoutingModule } from './/app-routing.module';
 import { PredictionComponent } from './prediction/prediction.component';
 import { OpeningHoursComponent } from './opening-hours/opening-hours.component';
@@ -36,6 +36,7 @@ import { CurrentUtilizationComponent } from './current-utilization/current-utili
     BrowserAnimationsModule,
     LayoutModule,
     MatToolbarModule,
+    MatGridListModule,
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
