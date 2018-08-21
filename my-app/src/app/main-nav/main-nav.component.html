@@ -7,30 +7,11 @@
     [opened]="!(isHandset$ | async)">
     <mat-toolbar color="primary">Menu</mat-toolbar>
     <mat-nav-list>
-<<<<<<< HEAD
-      <mat-list-item routerLink="/front-page">
-        <mat-icon matListIcon>home</mat-icon>
-        <h3 matLine> Startseite </h3>
-      </mat-list-item>
-      <mat-list-item routerLink="/current-utilization">
-        <mat-icon matListIcon>desktop_windows</mat-icon>
-        <h3 matLine> Aktuelle Auslastung </h3>
-      </mat-list-item>
-      <mat-list-item routerLink="/prediction">
-        <mat-icon matListIcon>bar_chart</mat-icon>
-        <h3 matLine> Vorhersage </h3>
-      </mat-list-item>
-      <mat-list-item routerLink="/opening-hours">
-        <mat-icon matListIcon>access_time</mat-icon>
-        <h3 matLine> Öffnungszeiten </h3>
-      </mat-list-item>
-=======
       <a mat-list-item routerLink="/front-page">Startseite</a>
       <a mat-list-item routerLink="/current-utilization">Aktuelle Auslastung</a>
       <a mat-list-item routerLink="/prediction">Vorhersage</a>
       <a mat-list-item routerLink="/opening-hours">Öffnungszeiten</a>
       <a mat-list-item routerLink="/layout-editor">Layout-Editor</a>
->>>>>>> c42f23f46bb2b7981ef7a620211a607b28539be1
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
