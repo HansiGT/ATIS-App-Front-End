@@ -4,7 +4,8 @@
 
   <div class="container">
     <div class="row">
-      <div id="layout" class="col-10">   </div>
+      <div id="layout" class="col-10">
+      </div>
       <div id="element" class="col-2">
           <!-- <div class="box" appDraggable
             (dragStart)="onDragStart()" (dragMove)="onDragMove($event)" (dragEnd)="onDragEnd($event)">
@@ -19,9 +20,32 @@
           <button (click)="createElement();">Create</button>
 
           <div id="element0" appDraggable
-            (dragStart)="onDragStart()" (dragMove)="onDragMove($event)" (dragEnd)="onDragEnd($event)">
+            (dragStart)="onDragStart($event)" (dragMove)="onDragMove($event)" (dragEnd)="onDragEnd($event, srcElement)">
+          </div>
+          <div id="element1" appDraggable
+            (dragStart)="onDragStart($event)" (dragMove)="onDragMove($event)" (dragEnd)="onDragEnd($event, srcElement)">
+          </div>
+          <div id="element2" appDraggable
+            (dragStart)="onDragStart($event)" (dragMove)="onDragMove($event)" (dragEnd)="onDragEnd($event, srcElement)">
+          </div>
+          <div id="element3" appDraggable
+            (dragStart)="onDragStart($event)" (dragMove)="onDragMove($event)" (dragEnd)="onDragEnd($event, srcElement)">
+          </div>
+          <div id="element4" appDraggable
+            (dragStart)="onDragStart($event)" (dragMove)="onDragMove($event)" (dragEnd)="onDragEnd($event, srcElement)">
+          </div>
+          <div id="element5" appDraggable
+            (dragStart)="onDragStart($event)" (dragMove)="onDragMove($event)" (dragEnd)="onDragEnd($event, srcElement)">
           </div>
       </div>
     </div>
+
+    <div class="row justify-content-center">
+     <div class="col-4">
+       <button class="btn btn-primary"  (click)="save();">Save</button>
+     </div>
+   </div>
+
+
   </div>
 </div>

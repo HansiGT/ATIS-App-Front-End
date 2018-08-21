@@ -17,6 +17,8 @@ export class LayoutEditorComponent implements OnInit {
   elementHeight = 0;
   elementType = '';
   elementTypes = ['PC', 'Printer', 'Laptop', 'Wall', 'Door'];
+  srcElement: Element;
+  addedElement: Array<HTMLElement> = new Array<HTMLElement>() ;
 
   ngOnInit() {
     // document.getElementById("layout").style.width = 0.8*screen.width + 82 + 'px';
@@ -42,46 +44,94 @@ export class LayoutEditorComponent implements OnInit {
     console.log(this.layoutWidth);
   }
 
-  onDragStart(): void {
-     console.log('got drag start');
+  onDragStart(event: PointerEvent): void {
+     this.srcElement = event.srcElement;
    }
 
    onDragMove(event: PointerEvent): void {
-     console.log(`got drag move ${Math.round(event.clientX)} ${Math.round(event.clientY)}`);
+     // console.log(`got drag move ${Math.round(event.clientX)} ${Math.round(event.clientY)}`);
    }
 
-   onDragEnd(event: PointerEvent): void {
-     var element = document.createElement('div');
+   onDragEnd(event: PointerEvent, srcElement: any): void {
+     var element = <HTMLElement> document.createElement('div');
      element.style.position = "absolute";
      element.style.background = "black";
      element.style.top = event.clientY + document.documentElement.scrollTop + 'px';
      element.style.left = event.clientX + document.documentElement.scrollLeft + 'px';
-     element.style.width = 5*this.unit + 'px';
-     element.style.height = 5*this.unit + 'px';
+     element.style.width = srcElement.clientWidth + 'px';
+     element.style.height = srcElement.clientHeight + 'px';
+     element.style.background = srcElement.style.background;
+     element.style.backgroundSize = 'contain';
      var container = <HTMLElement> document.getElementById('container');
      container.appendChild(element);
+
+     // Check if the new element is overlapped the others
+     // If yes, the new element will not be added
+     var overlapped = false;
+     for (let i=0; i < this.addedElement.length; i++){
+       overlapped = overlapped || this.overlapped(element, this.addedElement[i]);
+     }
+     if (overlapped) {
+       container.removeChild(element);
+       alert('Element überschnitten!');
+     }
+     else this.addedElement.push(element);
    }
 
    createElement() {
-     console.log(this.elementWidth);
-     console.log(this.elementHeight);
-     console.log(this.elementType);
-    var tempElement = document.getElementById('element' + this.INDEX);
+    var tempElement = document.getElementById('element' + this.INDEX++);
     tempElement.style.width = this.elementWidth*this.unit + 'px';
     tempElement.style.height = this.elementHeight*this.unit + 'px';
-    switch(this.elementType) {
-      case 'PC':
-          tempElement.style.background = "green";
-          break;
-      case 'Laptop':
-          tempElement.style.background = "red";
-          break;
-      case 'Wall':
-          tempElement.style.background = "black";
-          break;
+    tempElement.style.marginTop = '10px';
+    tempElement.style.border = '1px solid black';
+    switch (this.elementType) {
+        case "PC":
+            tempElement.style.background = "url('assets/img/current-utilization-icons/win_free.svg')";
+            break;
+        case "Laptop":
+            tempElement.style.background = "url('assets/img/current-utilization-icons/laptop.png')";
+            break;
+        case "Printer":
+            tempElement.style.background = "url('assets/img/current-utilization-icons/printer.svg')";
+            break;
+        case "Wall":
+            tempElement.style.background = 'black';
+            break;
+        default:
     }
+    tempElement.style.backgroundSize = 'contain';
+   }
 
+   save() {
+     for (let i=0; i < this.addedElement.length; i++) {
+       var type = '';
+       switch (this.addedElement[i].style.background) {
+           case 'url("assets/img/current-utilization-icons/win_free.svg") 0% 0% / contain':
+               type = 'PC';
+               break;
+           case 'url("assets/img/current-utilization-icons/laptop.svg") 0% 0% / contain':
+               type = 'Laptop';
+               break;
+           case 'url("assets/img/current-utilization-icons/printer.svg") 0% 0% / contain':
+               type = 'Printer';
+               break;
+           case '0% 0% / contain black':
+               type = 'Wall';
+               break;
+           default:
+       }
+       console.log(this.addedElement[i].style.top + ', ' + this.addedElement[i].style.left + ', ' + this.addedElement[i].style.width + ', ' + this.addedElement[i].style.height + ', ' + type);
+     }
+   }
 
+   // A helper method to check if 2 element are overlapped each other
+   overlapped(element1: Element, element2: Element) {
+     var rect1 = element1.getBoundingClientRect();
+     var rect2 = element2.getBoundingClientRect();
+     return !(rect1.right < rect2.left ||
+                rect1.left > rect2.right ||
+                rect1.bottom < rect2.top ||
+                rect1.top > rect2.bottom)
    }
 
 
