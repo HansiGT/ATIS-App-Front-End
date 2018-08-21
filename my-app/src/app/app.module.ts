@@ -7,11 +7,12 @@ import { NgbdDatepickerPopup } from "./datepicker/datepicker.component";
 import { FormsModule } from '@angular/forms';
 import { PredictionService } from './prediction.service';
 import { CurrentUtilizationService } from './current-utilization.service';
+import { OpeningHoursService } from './opening-hours.service';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatGridListModule } from '@angular/material';
 import { AppRoutingModule } from './/app-routing.module';
 import { PredictionComponent } from './prediction/prediction.component';
 import { OpeningHoursComponent } from './opening-hours/opening-hours.component';
@@ -40,6 +41,7 @@ import { DraggableModule } from './draggable/draggable.module';
     BrowserAnimationsModule,
     LayoutModule,
     MatToolbarModule,
+    MatGridListModule,
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
@@ -47,7 +49,7 @@ import { DraggableModule } from './draggable/draggable.module';
     AppRoutingModule,
     DraggableModule
   ],
-  providers: [PredictionService, CurrentUtilizationService],
+  providers: [PredictionService, CurrentUtilizationService, OpeningHoursService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
