@@ -27,49 +27,49 @@ export class FrontPageComponent implements OnInit {
   tiles: Tile[] = [
     {
       text: 'Aktuelle Auslastung',
-      routerLink: 'current-utilization',
+      routerLink: '/current-utilization',
       imgSrc: 'desktop_windows',
-      cols: 2,
-      rows: 2,
-      color: 'primary'
+      cols: 1,
+      rows: 1,
+      color: '#5c6bc0'
     },
 
     {
       text: 'Öffnungszeiten',
-      routerLink: 'opening-hours',
+      routerLink: '/opening-hours',
       imgSrc: 'access_time',
-      cols: 2,
-      rows: 2,
-      color: 'lightblue'
+      cols: 1,
+      rows: 1,
+      color: '#5c6bc0'
     },
 
     {
       text: 'Reservierungen',
       routerLink: 'NONE',
       imgSrc: 'alarm',
-      cols: 2,
-      rows: 2,
-      color: 'lightblue'
+      cols: 1,
+      rows: 1,
+      color: '#5c6bc0'
     },
 
     {
       text: 'Vorhersage',
-      routerLink: 'prediction',
+      routerLink: '/prediction',
       imgSrc: 'bar_chart',
-      cols: 2,
-      rows: 2,
-      color: 'lightblue'
+      cols: 1,
+      rows: 1,
+      color: '#5c6bc0'
     },
-/*
+
     {
       text: 'Layout Editor',
-      routerLink: 'NONE',
-      imgSrc: 'NONE',
-      cols: 2,
-      rows: 2,
-      color: 'lightblue'
+      routerLink: '/layout-editor',
+      imgSrc: 'view_compact',
+      cols: 1,
+      rows: 1,
+      color: '#5c6bc0'
     }
-*/
+
   ];
 
   constructor() { }

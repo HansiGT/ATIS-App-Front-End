@@ -1,26 +1,28 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav 
-    #drawer class="sidenav" 
-    fixedInViewport="true" 
-    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-    [mode]="(isHandset$ | async) ? 'over' : 'over'" 
-    [opened]="!(isHandset$ | async)">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'over'" [opened]="!(isHandset$ | async)">
     <mat-toolbar color="primary">Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="/front-page">Startseite</a>
-      <a mat-list-item routerLink="/current-utilization">Aktuelle Auslastung</a>
-      <a mat-list-item routerLink="/prediction">Vorhersage</a>
-      <a mat-list-item routerLink="/opening-hours">Öffnungszeiten</a>
-      <a mat-list-item routerLink="/layout-editor">Layout-Editor</a>
+      <a mat-list-item routerLink="/front-page">
+        <mat-icon matGridListIcon>home</mat-icon>
+        Startseite</a>
+      <a mat-list-item routerLink="/current-utilization">
+        <mat-icon matGridListIcon>desktop_windows</mat-icon>
+        Aktuelle Auslastung</a>
+      <a mat-list-item routerLink="/opening-hours">
+        <mat-icon matGridListIcon>access_time</mat-icon>
+        Öffnungszeiten</a>
+      <a mat-list-item routerLink="/prediction">
+        <mat-icon matGridListIcon>bar_chart</mat-icon>
+        Vorhersage</a>
+      <a mat-list-item routerLink="/layout-editor">
+        <mat-icon matGridListIcon>view_compact</mat-icon>
+        Layout-Editor</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
-      <button 
-        type="button" 
-        aria-label="Toggle sidenav" 
-        mat-icon-button (click)="drawer.toggle()" 
-        *ngIf="isHandset$ | async">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>ATIS IOSB</span>

@@ -1,7 +1,7 @@
 <app-main-nav>
 <h2>Öffnungszeiten</h2>
 <div id="openingHours">
-  <p>Die ATIS hat an folgenden Tagen geöffnet:</p>
+  <h4><p>Die ATIS hat an folgenden Tagen geöffnet:</p></h4>
   <table>
     <tr *ngFor="let oH of openingHours">
       <div [ngSwitch] = "oH.dayOfWeek">
@@ -13,7 +13,7 @@
         <td *ngSwitchCase = "'SATURDAY'">Samstag</td>
       </div>
       <td> : von {{ oH.startTime }}</td>
-      <td> - {{ oH.endTime }}</td>
+      <td> bis {{ oH.endTime }}</td>
     </tr>
   </table>
 </div>
