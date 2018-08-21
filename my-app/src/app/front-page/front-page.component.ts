@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-export interface Tile {
 
-  /*
-  each tile has text that it will display, a link to the page that the text describes
-  a size (rows, cols) and a color. Maybe there will also be a logo/icon
-  */
+/*
+each tile has text that it will display, a link to the page that the text describes
+a size (rows, cols) and a color. Maybe there will also be a logo/icon
+*/
+export interface Tile {
   text: string;
   routerLink: string;
   imgSrc: string;
@@ -12,7 +12,6 @@ export interface Tile {
   rows: number;
   color: string;
 }
-
 
 @Component({
   selector: 'app-front-page',
