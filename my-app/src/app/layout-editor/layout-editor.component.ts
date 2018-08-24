@@ -10,8 +10,9 @@ export class LayoutEditorComponent implements OnInit {
   NUMBER_OF_HORIZONTAL_ELEMENT = 70;
   // unit = 0.8*screen.width/this.NUMBER_OF_VERTICAL_ELEMENT;
   layoutWidth = 0;
+  layoutHeight = 0;
   unit = 0;
-
+  show = false;
   INDEX = 0;
   elementWidth = 0;
   elementHeight = 0;
@@ -24,23 +25,23 @@ export class LayoutEditorComponent implements OnInit {
     // document.getElementById("layout").style.width = 0.8*screen.width + 82 + 'px';
     // document.getElementById("layout").style.height = 0.8*screen.width+ 'px';
     // document.getElementById("element").style.height = 0.8*screen.width + 'px';
-    this.layoutWidth = document.getElementById("layout").offsetWidth;
     this.unit = (this.layoutWidth - 30)/this.NUMBER_OF_VERTICAL_ELEMENT;
-    this.createGridLayout();
   }
 
   createGridLayout() {
-    for (var i = 0; i < this.NUMBER_OF_HORIZONTAL_ELEMENT; i++)
-      for (var j = 0; j < this.NUMBER_OF_VERTICAL_ELEMENT; j++) {
+    this.show = true;
+    document.getElementById("layout").style.width = this.layoutWidth*10 + "px";
+    document.getElementById("layout").style.height = this.layoutHeight*10 + "px";
+    for (var i = 0; i < this.layoutHeight; i++)
+      for (var j = 0; j < this.layoutWidth; j++) {
         var gridElement = document.createElement('div');
-        gridElement.style.width = this.unit + 'px';
-        gridElement.style.height = this.unit + 'px';
+        gridElement.style.width = 10 + 'px';
+        gridElement.style.height = 10 + 'px';
         gridElement.style.border = '1px solid #000';
         gridElement.style.display = 'inline-block'
         gridElement.style.cssFloat = 'left';
         document.getElementById("layout").appendChild(gridElement);
       }
-    console.log(this.unit);
     console.log(this.layoutWidth);
   }
 
@@ -56,7 +57,7 @@ export class LayoutEditorComponent implements OnInit {
      var element = <HTMLElement> document.createElement('div');
      element.style.position = "absolute";
      element.style.background = "black";
-     element.style.top = event.clientY + document.documentElement.scrollTop + 'px';
+     element.style.top = event.clientY + document.documentElement.offsetTop  + 'px';
      element.style.left = event.clientX + document.documentElement.scrollLeft + 'px';
      element.style.width = srcElement.clientWidth + 'px';
      element.style.height = srcElement.clientHeight + 'px';
@@ -76,12 +77,15 @@ export class LayoutEditorComponent implements OnInit {
        alert('Element überschnitten!');
      }
      else this.addedElement.push(element);
+     console.log("clientY" + event.clientY);
+     console.log("element top" + element.style.top);
+     console.log("scroll top " +document.documentElement.offsetTop);
    }
 
    createElement() {
     var tempElement = document.getElementById('element' + this.INDEX++);
-    tempElement.style.width = this.elementWidth*this.unit + 'px';
-    tempElement.style.height = this.elementHeight*this.unit + 'px';
+    tempElement.style.width = this.elementWidth*10 + 'px';
+    tempElement.style.height = this.elementHeight*10 + 'px';
     tempElement.style.marginTop = '10px';
     tempElement.style.border = '1px solid black';
     switch (this.elementType) {
