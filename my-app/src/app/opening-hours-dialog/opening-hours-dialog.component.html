@@ -1,0 +1,20 @@
+<h2 mat-dialog-title>Öffnungszeiten ändern</h2>
+
+<mat-form-field>
+  <mat-select placeholder="Tag auswählen">
+    <mat-option value="option">Montag</mat-option>
+    <mat-option value="option">Dienstag</mat-option>
+    <mat-option value="option">Mittwoch</mat-option>
+    <mat-option value="option">Donnerstag</mat-option>
+    <mat-option value="option">Freitag</mat-option>
+    <mat-option value="option">Samstag</mat-option>
+    <mat-option value="option">Sonntag</mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-form-field hintLabel="Uhrzeit-Format: hh:mm">
+  <input matInput #input placeholder="Von:">
+</mat-form-field>
+<mat-form-field hintLabel="Uhrzeit-Format: hh:mm">
+  <input matInput #input placeholder="Bis:">
+</mat-form-field>
+<button>Save</button>
