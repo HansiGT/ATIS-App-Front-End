@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Position } from './position';
 
 @Component({
   selector: 'app-layout-editor',
@@ -19,20 +20,22 @@ export class LayoutEditorComponent implements OnInit {
   elementType = '';
   elementTypes = ['PC', 'Printer', 'Laptop', 'Wall', 'Door'];
   srcElement: Element;
-  addedElement: Array<HTMLElement> = new Array<HTMLElement>() ;
+  addedElement: Array<HTMLElement> = new Array<HTMLElement>();
+  positions: Array<Position> = new Array<Position>();
 
   ngOnInit() {
     // document.getElementById("layout").style.width = 0.8*screen.width + 82 + 'px';
     // document.getElementById("layout").style.height = 0.8*screen.width+ 'px';
     // document.getElementById("element").style.height = 0.8*screen.width + 'px';
     this.unit = (this.layoutWidth - 30)/this.NUMBER_OF_VERTICAL_ELEMENT;
+
   }
 
   createGridLayout() {
     this.show = true;
     document.getElementById("layout").style.width = this.layoutWidth*10 + "px";
     document.getElementById("layout").style.height = this.layoutHeight*10 + "px";
-    for (var i = 0; i < this.layoutHeight; i++)
+    for (var i = 0; i < this.layoutHeight; i++) {
       for (var j = 0; j < this.layoutWidth; j++) {
         var gridElement = document.createElement('div');
         gridElement.style.width = 10 + 'px';
@@ -41,8 +44,10 @@ export class LayoutEditorComponent implements OnInit {
         gridElement.style.display = 'inline-block'
         gridElement.style.cssFloat = 'left';
         document.getElementById("layout").appendChild(gridElement);
+        var pos = new Position(gridElement.getBoundingClientRect().left,gridElement.getBoundingClientRect().top);
+        this.positions.push(pos);
       }
-    console.log(this.layoutWidth);
+    }
   }
 
   onDragStart(event: PointerEvent): void {
@@ -57,14 +62,15 @@ export class LayoutEditorComponent implements OnInit {
      var element = <HTMLElement> document.createElement('div');
      element.style.position = "absolute";
      element.style.background = "black";
-     element.style.top = event.clientY + document.documentElement.offsetTop  + 'px';
-     element.style.left = event.clientX + document.documentElement.scrollLeft + 'px';
+     element.style.top = event.clientY + window.scrollY  + 'px';
+     element.style.left = event.clientX + window.scrollX + 'px';
      element.style.width = srcElement.clientWidth + 'px';
      element.style.height = srcElement.clientHeight + 'px';
      element.style.background = srcElement.style.background;
      element.style.backgroundSize = 'contain';
      var container = <HTMLElement> document.getElementById('container');
      container.appendChild(element);
+
 
      // Check if the new element is overlapped the others
      // If yes, the new element will not be added
@@ -76,10 +82,11 @@ export class LayoutEditorComponent implements OnInit {
        container.removeChild(element);
        alert('Element überschnitten!');
      }
-     else this.addedElement.push(element);
-     console.log("clientY" + event.clientY);
-     console.log("element top" + element.style.top);
-     console.log("scroll top " +document.documentElement.offsetTop);
+     else {
+       this.autofit(element);
+       this.addedElement.push(element);
+       this.dragElement(element);
+     }
    }
 
    createElement() {
@@ -124,7 +131,10 @@ export class LayoutEditorComponent implements OnInit {
                break;
            default:
        }
-       console.log(this.addedElement[i].style.top + ', ' + this.addedElement[i].style.left + ', ' + this.addedElement[i].style.width + ', ' + this.addedElement[i].style.height + ', ' + type);
+       console.log(Math.round((this.addedElement[i].getBoundingClientRect().left - this.positions[0].x)/10) + ', '
+                 + Math.round((this.addedElement[i].getBoundingClientRect().top - this.positions[0].y)/10) + ', '
+                 + Math.round(this.addedElement[i].offsetWidth/10) + ', '
+                 + Math.round(this.addedElement[i].offsetHeight/10) + ', ' + type);
      }
    }
 
@@ -137,6 +147,62 @@ export class LayoutEditorComponent implements OnInit {
                 rect1.bottom < rect2.top ||
                 rect1.top > rect2.bottom)
    }
+
+   distance(a: Position, b: Position) {
+     var deltaX = a.x - b.x;
+     var deltaY = a.y - b.y;
+     return Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2));
+   }
+
+   autofit(element: HTMLElement) {
+     var elementPosition = new Position(element.offsetLeft, element.offsetTop);
+     var minDist = this.distance(elementPosition, this.positions[0]);
+     for (let i=0; i < this.positions.length; i++) {
+       if (this.distance(elementPosition, this.positions[i]) <= minDist) {
+         minDist = this.distance(elementPosition, this.positions[i]);
+         element.style.left = this.positions[i].x + 1 + 'px';
+         element.style.top = this.positions[i].y + 1 + 'px';
+       }
+     }
+   }
+
+
+  dragElement(elmnt) {
+    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    elmnt.onmousedown = dragMouseDown;
+
+    function dragMouseDown(e) {
+      e = e || window.event;
+      e.preventDefault();
+      // get the mouse cursor position at startup:
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+      document.onmouseup = closeDragElement;
+      // call a function whenever the cursor moves:
+      document.onmousemove = elementDrag;
+    }
+
+   function elementDrag(e) {
+      e = e || window.event;
+      e.preventDefault();
+      // calculate the new cursor position:
+      pos1 = pos3 - e.clientX;
+      pos2 = pos4 - e.clientY;
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+      // set the element's new position:
+      elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+      elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+      console.log(this.positions[0].x);
+    }
+
+    function closeDragElement() {
+      /* stop moving when mouse button is released:*/
+      document.onmouseup = null;
+      document.onmousemove = null;
+    }
+
+  }
 
 
 
