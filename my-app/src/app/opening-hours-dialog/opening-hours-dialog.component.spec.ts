@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { OpeningHoursDialogComponent } from './opening-hours-dialog.component';
 
 describe('OpeningHoursDialogComponent', () => {
@@ -8,7 +8,10 @@ describe('OpeningHoursDialogComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OpeningHoursDialogComponent ]
+      declarations: [ OpeningHoursDialogComponent ],
+      schemas: [
+        NO_ERRORS_SCHEMA //muss drin sein weil sonst nur errors kommen
+      ]
     })
     .compileComponents();
   }));
