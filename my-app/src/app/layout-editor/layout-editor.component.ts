@@ -70,6 +70,7 @@ export class LayoutEditorComponent implements OnInit {
      element.style.backgroundSize = 'contain';
      var container = <HTMLElement> document.getElementById('container');
      container.appendChild(element);
+     this.autofit(element);
 
 
      // Check if the new element is overlapped the others
@@ -83,7 +84,6 @@ export class LayoutEditorComponent implements OnInit {
        alert('Element überschnitten!');
      }
      else {
-       this.autofit(element);
        this.addedElement.push(element);
        this.dragElement(element);
      }
@@ -168,6 +168,25 @@ export class LayoutEditorComponent implements OnInit {
 
 
   dragElement(elmnt) {
+    var originTop = elmnt.style.top;
+    var originLeft = elmnt.style.left;
+    var pos = this.positions;
+    var addedElement = this.addedElement;
+    var dist = this.distance;
+    var autof = function (element: HTMLElement) {
+      var elementPosition = new Position(element.offsetLeft, element.offsetTop);
+      var minDist = dist(elementPosition, pos[0]);
+      for (let i=0; i < pos.length; i++) {
+        if (dist(elementPosition, pos[i]) <= minDist) {
+          minDist = dist(elementPosition, pos[i]);
+          element.style.left = pos[i].x + 1 + 'px';
+          element.style.top = pos[i].y + 1 + 'px';
+        }
+      }
+    };
+
+    var checkOverlap = this.overlapped;
+
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
     elmnt.onmousedown = dragMouseDown;
 
@@ -193,16 +212,36 @@ export class LayoutEditorComponent implements OnInit {
       // set the element's new position:
       elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
       elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-      console.log(this.positions[0].x);
+
     }
 
     function closeDragElement() {
       /* stop moving when mouse button is released:*/
       document.onmouseup = null;
       document.onmousemove = null;
-    }
+      autof(elmnt);
 
+      // Check if the element which is moving is overlapped the others
+      // If yes, the new element will not be added
+      var overlapped = false;
+      for (let i=0; i < addedElement.length; i++){
+        if (elmnt !== addedElement[i]) {
+          overlapped = overlapped || checkOverlap(elmnt, addedElement[i]);
+        }
+      }
+      if (overlapped) {
+        alert('Element überschnitten!');
+        elmnt.style.top = originTop;
+        elmnt.style.left = originLeft;
+      }
+      else {
+        originTop = elmnt.style.top;
+        originLeft = elmnt.style.left;
+      }
   }
+
+
+
 
 
 
