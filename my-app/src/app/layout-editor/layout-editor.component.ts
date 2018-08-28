@@ -23,7 +23,6 @@ export class LayoutEditorComponent implements OnInit {
   elementTypes = ['PC', 'Printer', 'Laptop', 'Wall', 'Door'];
   srcElement: Element;
   addedElement: Array<HTMLElement> = new Array<HTMLElement>();
-  positions: Array<Position> = new Array<Position>();
 
   ngOnInit() {
     // document.getElementById("layout").style.width = 0.8*screen.width + 82 + 'px';
@@ -53,8 +52,6 @@ export class LayoutEditorComponent implements OnInit {
         gridElement.style.display = 'inline-block'
         gridElement.style.cssFloat = 'left';
         document.getElementById("layout").appendChild(gridElement);
-        var pos = new Position(gridElement.getBoundingClientRect().left,gridElement.getBoundingClientRect().top);
-        this.positions.push(pos);
       }
     }
 
@@ -65,7 +62,6 @@ export class LayoutEditorComponent implements OnInit {
         this.addedElement.splice(i,1);
       }
     }
-
   }
 
   onDragStart(event: PointerEvent): void {
@@ -140,6 +136,7 @@ export class LayoutEditorComponent implements OnInit {
    }
 
    save() {
+     var firstElementRect = document.getElementById("gridElement00").getBoundingClientRect();
      for (let i=0; i < this.addedElement.length; i++) {
        var type = '';
        switch (this.addedElement[i].style.background) {
@@ -157,8 +154,9 @@ export class LayoutEditorComponent implements OnInit {
                break;
            default:
        }
-       console.log(Math.round((this.addedElement[i].getBoundingClientRect().left - this.positions[0].x)/10) + ', '
-                 + Math.round((this.addedElement[i].getBoundingClientRect().top - this.positions[0].y)/10) + ', '
+
+       console.log(Math.round((this.addedElement[i].getBoundingClientRect().left - firstElementRect.left)/10) + ', '
+                 + Math.round((this.addedElement[i].getBoundingClientRect().top - firstElementRect.top)/10) + ', '
                  + Math.round(this.addedElement[i].offsetWidth/10) + ', '
                  + Math.round(this.addedElement[i].offsetHeight/10) + ', ' + type);
      }
@@ -180,41 +178,21 @@ export class LayoutEditorComponent implements OnInit {
      return (rect.left < layout.left || rect.top < layout.top || rect.right > layout.right || rect.bottom > layout.bottom);
    }
 
-   distance(a: Position, b: Position) {
-     var deltaX = a.x - b.x;
-     var deltaY = a.y - b.y;
-     return Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2));
-   }
-
    autofit(element: HTMLElement) {
-     var elementPosition = new Position(element.offsetLeft, element.offsetTop);
-     var minDist = this.distance(elementPosition, this.positions[0]);
-     for (let i=0; i < this.positions.length; i++) {
-       if (this.distance(elementPosition, this.positions[i]) <= minDist) {
-         minDist = this.distance(elementPosition, this.positions[i]);
-         element.style.left = this.positions[i].x + 1 + 'px';
-         element.style.top = this.positions[i].y + 1 + 'px';
-       }
-     }
+     var firstElementRect = document.getElementById("gridElement00").getBoundingClientRect();
+     element.style.left = firstElementRect.left + Math.round((element.offsetLeft  - firstElementRect.left)/10)*10 + 1 + 'px';
+     element.style.top = firstElementRect.top + window.scrollY + Math.round((element.offsetTop -  window.scrollY - firstElementRect.top)/10)*10 + 1 + 'px';
    }
 
 
   dragElement(elmnt) {
     var originTop = elmnt.style.top;
     var originLeft = elmnt.style.left;
-    var pos = this.positions;
     var addedElement = this.addedElement;
-    var dist = this.distance;
     var autof = function (element: HTMLElement) {
-      var elementPosition = new Position(element.offsetLeft, element.offsetTop);
-      var minDist = dist(elementPosition, pos[0]);
-      for (let i=0; i < pos.length; i++) {
-        if (dist(elementPosition, pos[i]) <= minDist) {
-          minDist = dist(elementPosition, pos[i]);
-          element.style.left = pos[i].x + 1 + 'px';
-          element.style.top = pos[i].y + 1 + 'px';
-        }
-      }
+      var firstElementRect = document.getElementById("gridElement00").getBoundingClientRect();
+      element.style.left = firstElementRect.left + Math.round((element.offsetLeft  - firstElementRect.left)/10)*10 + 1 + 'px';
+      element.style.top = firstElementRect.top + window.scrollY + Math.round((element.offsetTop -  window.scrollY - firstElementRect.top)/10)*10 + 1 + 'px';
     };
 
     var checkOverlap = this.overlapped;
