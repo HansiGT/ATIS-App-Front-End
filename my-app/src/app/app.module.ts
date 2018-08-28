@@ -56,6 +56,7 @@ import { CurrentUtilizationComponent } from './current-utilization/current-utili
 import { LayoutEditorComponent } from './layout-editor/layout-editor.component';
 import { DraggableModule } from './draggable/draggable.module';
 import { OpeningHoursDialogComponent } from './opening-hours-dialog/opening-hours-dialog.component';
+import { IdElementDialogComponent } from './id-element-dialog/id-element-dialog.component';
 
 
 @NgModule({
@@ -68,7 +69,8 @@ import { OpeningHoursDialogComponent } from './opening-hours-dialog/opening-hour
     FrontPageComponent,
     CurrentUtilizationComponent,
     LayoutEditorComponent,
-    OpeningHoursDialogComponent
+    OpeningHoursDialogComponent,
+    IdElementDialogComponent
   ],
   imports: [
     NgbModule.forRoot(),
@@ -92,7 +94,8 @@ import { OpeningHoursDialogComponent } from './opening-hours-dialog/opening-hour
     MatSelectModule
   ],
   entryComponents: [
-    OpeningHoursDialogComponent
+    OpeningHoursDialogComponent,
+    IdElementDialogComponent
   ],
   providers: [PredictionService, CurrentUtilizationService, OpeningHoursService],
   bootstrap: [AppComponent]

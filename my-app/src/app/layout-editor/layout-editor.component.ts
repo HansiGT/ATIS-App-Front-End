@@ -1,5 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Position } from './position';
+import { IdElementDialogComponent } from '../id-element-dialog/id-element-dialog.component';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+
+export interface DialogData {
+  id: number;
+}
+
 
 @Component({
   selector: 'app-layout-editor',
@@ -8,6 +15,7 @@ import { Position } from './position';
 })
 export class LayoutEditorComponent implements OnInit {
 
+  elementID = 0;
   elementIndex = 0;
   layoutWidth = 0;
   layoutHeight = 0;
@@ -23,6 +31,19 @@ export class LayoutEditorComponent implements OnInit {
   elementTypes = ['PC', 'Printer', 'Laptop', 'Wall', 'Door'];
   srcElement: Element;
   addedElement: Array<HTMLElement> = new Array<HTMLElement>();
+
+  constructor(public dialog: MatDialog) { }
+
+  openDialog(element: HTMLElement): void {
+    const dialogRef = this.dialog.open(IdElementDialogComponent, {
+      data: {id: this.elementID}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.elementID = result;
+      element.id = element.id + result;
+    });
+  }
 
   ngOnInit() {
     // document.getElementById("layout").style.width = 0.8*screen.width + 82 + 'px';
@@ -76,13 +97,32 @@ export class LayoutEditorComponent implements OnInit {
      var element = <HTMLElement> document.createElement('div');
      element.style.position = "absolute";
      element.style.background = "black";
-     element.id = "test" + this.elementIndex++;
      element.style.top = event.clientY + window.scrollY  + 'px';
      element.style.left = event.clientX + window.scrollX + 'px';
      element.style.width = srcElement.clientWidth + 'px';
      element.style.height = srcElement.clientHeight + 'px';
      element.style.background = srcElement.style.background;
      element.style.backgroundSize = 'contain';
+
+     //Set ID for element
+     var type = '';
+     switch (element.style.background) {
+         case 'url("assets/img/current-utilization-icons/win_free.svg") 0% 0% / contain':
+             type = 'PC';
+             break;
+         case 'url("assets/img/current-utilization-icons/laptop.png") 0% 0% / contain':
+             type = 'Laptop';
+             break;
+         case 'url("assets/img/current-utilization-icons/printer.svg") 0% 0% / contain':
+             type = 'Printer';
+             break;
+         case '0% 0% / contain black':
+             type = 'Wall';
+             break;
+         default:
+     }
+     element.id = type;
+
      var container = <HTMLElement> document.getElementById('container');
      container.appendChild(element);
      this.autofit(element);
@@ -103,6 +143,7 @@ export class LayoutEditorComponent implements OnInit {
          alert('Element überschnitten!');
        }
        else {
+         this.openDialog(element);
          this.addedElement.push(element);
          this.dragElement(element);
        }
@@ -158,7 +199,7 @@ export class LayoutEditorComponent implements OnInit {
        console.log(Math.round((this.addedElement[i].getBoundingClientRect().left - firstElementRect.left)/10) + ', '
                  + Math.round((this.addedElement[i].getBoundingClientRect().top - firstElementRect.top)/10) + ', '
                  + Math.round(this.addedElement[i].offsetWidth/10) + ', '
-                 + Math.round(this.addedElement[i].offsetHeight/10) + ', ' + type);
+                 + Math.round(this.addedElement[i].offsetHeight/10) + ', ' + this.addedElement[i].id);
      }
    }
 
