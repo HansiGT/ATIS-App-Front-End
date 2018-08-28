@@ -2,8 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgbdDatepickerPopup } from "./datepicker/datepicker.component";
+import { NgbModule, NgbDatepicker } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDatepickerPopup } from "./datepicker/datepicker.component";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PredictionService } from './prediction.service';
 import { CurrentUtilizationService } from './current-utilization.service';
@@ -61,7 +61,7 @@ import { OpeningHoursDialogComponent } from './opening-hours-dialog/opening-hour
 @NgModule({
   declarations: [
     AppComponent,
-    NgbdDatepickerPopup,
+    NgbDatepickerPopup,
     MainNavComponent,
     PredictionComponent,
     OpeningHoursComponent,
@@ -89,7 +89,8 @@ import { OpeningHoursDialogComponent } from './opening-hours-dialog/opening-hour
     DraggableModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    NgbDatepicker
   ],
   entryComponents: [
     OpeningHoursDialogComponent

@@ -25,4 +25,16 @@ describe('OpeningHoursDialogComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have one option for each day of the week', () => {
+    expect(component).toBeFalsy();
+  });
+
+  it('should have one field for the start and one for the end', () => {
+    expect(component).toBeFalsy();
+  });
+
+  it('should save the changes if the "save" button is pressed', () => {
+    expect(component).toBeFalsy();
+  });
 });
