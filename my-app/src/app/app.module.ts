@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { NgbModule, NgbDatepicker } from '@ng-bootstrap/ng-bootstrap';
 import { NgbDatepickerPopup } from "./datepicker/datepicker.component";
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PredictionService } from './prediction.service';
 import { CurrentUtilizationService } from './current-utilization.service';
@@ -56,6 +57,7 @@ import { CurrentUtilizationComponent } from './current-utilization/current-utili
 import { LayoutEditorComponent } from './layout-editor/layout-editor.component';
 import { DraggableModule } from './draggable/draggable.module';
 import { OpeningHoursDialogComponent } from './opening-hours-dialog/opening-hours-dialog.component';
+import { InterceptorModule } from './interceptor.module';
 
 
 @NgModule({
@@ -72,10 +74,12 @@ import { OpeningHoursDialogComponent } from './opening-hours-dialog/opening-hour
   ],
   imports: [
     NgbModule.forRoot(),
+    NgxMaterialTimepickerModule.forRoot(),
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    InterceptorModule,
     BrowserAnimationsModule,
     LayoutModule,
     MatToolbarModule,
@@ -90,7 +94,6 @@ import { OpeningHoursDialogComponent } from './opening-hours-dialog/opening-hour
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    NgbDatepicker
   ],
   entryComponents: [
     OpeningHoursDialogComponent
