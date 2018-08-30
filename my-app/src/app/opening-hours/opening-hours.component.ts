@@ -15,7 +15,7 @@ export class OpeningHoursComponent implements OnInit {
   openingHours: Array<any>;
 
   constructor(private _OpeningHoursService: OpeningHoursService, public dialog: MatDialog) { }
-
+  /*
   openDialog(): void {
     const dialogRef = this.dialog.open(OpeningHoursDialogComponent, {
       height: "90vh"
@@ -28,7 +28,7 @@ export class OpeningHoursComponent implements OnInit {
       this._OpeningHoursService.putOpeningHours(JSON.stringify(result)).subscribe((data:any) => {console.log(data)})
       }
     });
-  }
+  }*/
 
   ngOnInit() {
     this._OpeningHoursService.getOpeningHours().subscribe(
