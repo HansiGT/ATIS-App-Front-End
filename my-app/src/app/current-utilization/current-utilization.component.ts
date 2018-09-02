@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CurrentUtilizationService } from '../current-utilization.service'
+import { CurrentUtilizationService } from '../current-utilization.service';
+declare var jquery:any;
+declare var $ :any;
 
 @Component({
   selector: 'app-current-utilization',
@@ -25,6 +27,7 @@ export class CurrentUtilizationComponent implements OnInit {
 
   ngOnInit() {
     this.displayLayout();
+    this.getUtilizationInformation();
 
     setInterval(() => {
            this.updateCurrentStateOfElement();
@@ -40,6 +43,7 @@ export class CurrentUtilizationComponent implements OnInit {
   }
 
   displayLayout() {
+    var unit = this.unit;
     this._currentUtilizationService.getLayout()
       .subscribe(res => {
         this.poolElements = res['poolElements'];
@@ -51,30 +55,31 @@ export class CurrentUtilizationComponent implements OnInit {
 
             //draw outline of room (not hard coded)
             for(var i = 0; i < room.pos.length - 1; i++) {
-                context.moveTo(2.2222 * room.pos[i].x, 2.2222 * room.pos[i].y);
-                context.lineTo(2.2222 * room.pos[i + 1].x, 2.2222 * room.pos[i + 1].y);
+                context.moveTo(unit * room.pos[i].x, unit * room.pos[i].y);
+                context.lineTo(unit * room.pos[i + 1].x, unit * room.pos[i + 1].y);
             }
             //connect to the first
-            context.moveTo(2.2222 * room.pos[room.pos.length - 1].x, 2.2222 * room.pos[room.pos.length - 1].y);
-            context.lineTo(2.2222 * room.pos[0].x, 2.2222 * room.pos[0].y);
+            context.moveTo(unit * room.pos[room.pos.length - 1].x, unit * room.pos[room.pos.length - 1].y);
+            context.lineTo(unit * room.pos[0].x, unit * room.pos[0].y);
 
             context.closePath();
             context.stroke();
 
             room.portalGates.forEach(function(portalGate) {
-            if (portalGate.type == "door") {
-              var canvas = <HTMLCanvasElement> document.getElementById('doorCanvas');
-              var doorContext = canvas.getContext('2d');
-              doorContext.beginPath();
-              doorContext.moveTo(2.2222*portalGate.pos[0].x, 2.2222*portalGate.pos[0].y - 2.2222*2);
-              doorContext.lineTo(2.2222*portalGate.pos[1].x, 2.2222*portalGate.pos[1].y - 2.2222*2);
-              doorContext.lineWidth = 2.2222*3;
-              doorContext.strokeStyle="#1e90ff";
-              doorContext.closePath();
-              doorContext.stroke();
-            }
+                if (portalGate.type == "passage") {
+                var canvas = <HTMLCanvasElement> document.getElementById('doorCanvas');
+                var doorContext = canvas.getContext('2d');
+                doorContext.beginPath();
+                doorContext.moveTo(unit*portalGate.pos[0].x, unit*portalGate.pos[0].y - unit*2);
+                doorContext.lineTo(unit*portalGate.pos[1].x, unit*portalGate.pos[1].y - unit*2);
+                doorContext.lineWidth = unit*3;
+                doorContext.strokeStyle="#1e90ff";
+                doorContext.closePath();
+                doorContext.stroke();
+                }
             })
         })
+        this.updateCurrentStateOfElement();
         });
   }
 
@@ -116,9 +121,9 @@ export class CurrentUtilizationComponent implements OnInit {
               default:
                   console.log("could not set image of element: " + element.id);
           }
-          document.getElementById("" + element.type + element.id).style.backgroundImage = "url('" + stateIconURL + "')";
+          document.getElementById(element.type + element.id).style.backgroundImage = "url('" + stateIconURL + "')";
         })
-      })
+      });
   }
 
   getUtilizationInformation() {
