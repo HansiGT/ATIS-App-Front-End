@@ -1,0 +1,4 @@
+#Sun Sep 02 17:17:39 CEST 2018
+base.0=C\:\\Users\\ratzh\\OneDrive\\Dokumente\\PSE\\iot_atis_iosb_frontend\\ATIS_IOSB\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+renamed.0=classes.dex
+file.0=C\:\\Users\\ratzh\\OneDrive\\Dokumente\\PSE\\iot_atis_iosb_frontend\\ATIS_IOSB\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0\\classes.dex
