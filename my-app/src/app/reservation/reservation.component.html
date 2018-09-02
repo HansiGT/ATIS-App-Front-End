@@ -1,0 +1,48 @@
+<app-main-nav>
+  <h2>Meine Reservierungen</h2>
+  <table>
+    <tr>
+      <th>Benutzer</th>
+      <th>PC</th>
+      <th>Termin</th>
+    </tr>
+    <tr>
+      <td>Sebastian Abeck</td>
+      <td>1</td>
+      <td>10:00 - 11:30, 21.09.2018</td>
+      <td><mat-icon matGridListIcon>delete</mat-icon></td>
+    </tr>
+  </table>
+  <div class="panel">
+  <mat-accordion>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Neue Reservierung erstellen
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+      
+        <mat-form-field appearance="outline">
+          <input matInput [(ngModel)]="date" [matDatepicker]="picker" (click)="picker.open()" [min]="minDate" placeholder="Tag auswählen">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker touchUi #picker disabled="false"></mat-datepicker>
+        </mat-form-field>
+      
+        <mat-form-field appearance="outline">
+            <mat-select placeholder="Uhrzeit wählen" [(value)]="time">
+                <mat-option value="8:00 - 9:30">8:00 - 9:30</mat-option>
+                <mat-option value="9:45 - 11:15">9:45 - 11:15</mat-option>
+                <mat-option value="11:30 - 13:00">11:30 - 13:00</mat-option>
+                <mat-option value="14:00 - 15:30">14:00 - 15:30</mat-option>
+                <mat-option value="15:45 - 17:15">15:45 - 17:15</mat-option>
+                <mat-option value="17:30 - 19:00">17:30 - 19:00</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <input matInput [(ngModel)]="pcid" maxlength="2" placeholder="PC-ID">
+        </mat-form-field>
+        <button mat-raised-button color="primary">Reservieren</button>
+    </mat-expansion-panel>
+  </mat-accordion>
+  </div>
+</app-main-nav>

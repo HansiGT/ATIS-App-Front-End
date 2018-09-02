@@ -46,7 +46,7 @@ export class FrontPageComponent implements OnInit {
 
     {
       text: 'Reservierungen',
-      routerLink: 'NONE',
+      routerLink: '/reservation',
       imgSrc: 'event_available',
       cols: 1,
       rows: 1,

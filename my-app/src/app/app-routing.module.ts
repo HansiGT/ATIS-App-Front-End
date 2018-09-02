@@ -5,6 +5,7 @@ import { OpeningHoursComponent } from './opening-hours/opening-hours.component';
 import { FrontPageComponent } from './front-page/front-page.component';
 import { CurrentUtilizationComponent } from './current-utilization/current-utilization.component';
 import { LayoutEditorComponent } from './layout-editor/layout-editor.component';
+import { ReservationComponent } from './reservation/reservation.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'layout-editor',
     component: LayoutEditorComponent
+  },
+  {
+    path: 'reservation',
+    component: ReservationComponent
   }
 ];
 

@@ -59,6 +59,7 @@ import { DraggableModule } from './draggable/draggable.module';
 import { OpeningHoursDialogComponent } from './opening-hours-dialog/opening-hours-dialog.component';
 import { InterceptorModule } from './interceptor.module';
 import { IdElementDialogComponent } from './id-element-dialog/id-element-dialog.component';
+import { ReservationComponent } from './reservation/reservation.component';
 
 
 @NgModule({
@@ -72,7 +73,8 @@ import { IdElementDialogComponent } from './id-element-dialog/id-element-dialog.
     CurrentUtilizationComponent,
     LayoutEditorComponent,
     OpeningHoursDialogComponent,
-    IdElementDialogComponent
+    IdElementDialogComponent,
+    ReservationComponent
   ],
   imports: [
     NgbModule.forRoot(),
@@ -91,6 +93,9 @@ import { IdElementDialogComponent } from './id-element-dialog/id-element-dialog.
     MatIconModule,
     MatListModule,
     MatDialogModule,
+    MatExpansionModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     AppRoutingModule,
     DraggableModule,
     MatFormFieldModule,
