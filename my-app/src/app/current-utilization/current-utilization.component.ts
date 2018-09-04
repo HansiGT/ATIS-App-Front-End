@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CurrentUtilizationService } from '../current-utilization.service';
+import { Meta } from '../../../node_modules/@angular/platform-browser';
 declare var jquery:any;
 declare var $ :any;
 
@@ -22,7 +23,8 @@ export class CurrentUtilizationComponent implements OnInit {
   test = 10;
   unit = screen.width / 162;
 
-  constructor(private _currentUtilizationService: CurrentUtilizationService) {
+  constructor(private _currentUtilizationService: CurrentUtilizationService, private meta:Meta) {
+    this.meta.updateTag({ name:"viewport", content: 'user-scalable=yes, initial-scale=1, maximum-scale=2, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi' });
   }
 
   ngOnInit() {

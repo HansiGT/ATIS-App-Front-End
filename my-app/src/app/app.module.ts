@@ -96,6 +96,7 @@ import { ReservationComponent } from './reservation/reservation.component';
     MatExpansionModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatTableModule,
     AppRoutingModule,
     DraggableModule,
     MatFormFieldModule,

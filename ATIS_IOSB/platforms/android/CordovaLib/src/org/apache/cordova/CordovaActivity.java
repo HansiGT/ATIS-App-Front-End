@@ -140,6 +140,7 @@ public class CordovaActivity extends Activity {
         if (savedInstanceState != null) {
             cordovaInterface.restoreInstanceState(savedInstanceState);
         }
+
     }
 
     protected void init() {

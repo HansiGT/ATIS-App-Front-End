@@ -1,17 +1,24 @@
 <app-main-nav>
   <h2>Meine Reservierungen</h2>
-  <table>
-    <tr>
-      <th>Benutzer</th>
-      <th>PC</th>
-      <th>Termin</th>
-    </tr>
-    <tr>
-      <td>Sebastian Abeck</td>
-      <td>1</td>
-      <td>10:00 - 11:30, 21.09.2018</td>
-      <td><mat-icon matGridListIcon>delete</mat-icon></td>
-    </tr>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="user">
+      <th mat-header-cell *matHeaderCellDef> Benutzer </th>
+      <td mat-cell *matCellDef="let element">{{element.user}}</td>
+    </ng-container>
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> PC </th>
+      <td mat-cell *matCellDef="let element">{{element.id}}</td>
+    </ng-container>
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef> Termin </th>
+      <td mat-cell *matCellDef="let element">{{element.date}}</td>
+    </ng-container>
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element"><mat-icon matGridListIcon>{{element.delete}}</mat-icon></td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
   <div class="panel">
   <mat-accordion>
@@ -41,7 +48,7 @@
         <mat-form-field appearance="outline">
           <input matInput [(ngModel)]="pcid" maxlength="2" placeholder="PC-ID">
         </mat-form-field>
-        <button mat-raised-button color="primary">Reservieren</button>
+        <button (click)="makeReservation()" mat-raised-button color="primary">Reservieren</button>
     </mat-expansion-panel>
   </mat-accordion>
   </div>

@@ -3,6 +3,7 @@ import { OpeningHoursService } from '../opening-hours.service';
 import { OpeningHoursDialogComponent } from '../opening-hours-dialog/opening-hours-dialog.component';
 import { MatDialog } from '@angular/material';
 import { HttpClient } from '@angular/common/http';
+import { Meta } from '../../../node_modules/@angular/platform-browser';
 
 
 @Component({
@@ -14,7 +15,9 @@ import { HttpClient } from '@angular/common/http';
 export class OpeningHoursComponent implements OnInit {
   openingHours: Array<any>;
 
-  constructor(private _OpeningHoursService: OpeningHoursService, public dialog: MatDialog) { }
+  constructor(private _OpeningHoursService: OpeningHoursService, public dialog: MatDialog, private meta: Meta) { 
+    this.meta.updateTag({ name:"viewport", content: 'user-scalable=yes, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi' });
+  }
   /*
   openDialog(): void {
     const dialogRef = this.dialog.open(OpeningHoursDialogComponent, {
