@@ -1,5 +1,5 @@
 <app-main-nav>
-  <h2>Meine Reservierungen</h2>
+  <h2>Reservierungen</h2>
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
     <ng-container matColumnDef="user">
       <th mat-header-cell *matHeaderCellDef> Benutzer </th>
@@ -15,7 +15,7 @@
     </ng-container>
     <ng-container matColumnDef="delete">
       <th mat-header-cell *matHeaderCellDef></th>
-      <td mat-cell *matCellDef="let element"><mat-icon matGridListIcon>{{element.delete}}</mat-icon></td>
+      <td mat-cell *matCellDef="let element"><button mat-icon-button><mat-icon matGridListIcon>{{element.delete}}</mat-icon></button></td>
     </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
@@ -28,6 +28,9 @@
             Neue Reservierung erstellen
           </mat-panel-title>
         </mat-expansion-panel-header>
+        <mat-form-field appearance="outline">
+          <input matInput [(ngModel)]="name" placeholder="Name">
+        </mat-form-field>
       
         <mat-form-field appearance="outline">
           <input matInput [(ngModel)]="date" [matDatepicker]="picker" (click)="picker.open()" [min]="minDate" placeholder="Tag auswählen">
@@ -37,8 +40,8 @@
       
         <mat-form-field appearance="outline">
             <mat-select placeholder="Uhrzeit wählen" [(value)]="time">
-                <mat-option value="8:00 - 9:30">8:00 - 9:30</mat-option>
-                <mat-option value="9:45 - 11:15">9:45 - 11:15</mat-option>
+                <mat-option value="08:00 - 09:30">8:00 - 9:30</mat-option>
+                <mat-option value="09:45 - 11:15">9:45 - 11:15</mat-option>
                 <mat-option value="11:30 - 13:00">11:30 - 13:00</mat-option>
                 <mat-option value="14:00 - 15:30">14:00 - 15:30</mat-option>
                 <mat-option value="15:45 - 17:15">15:45 - 17:15</mat-option>
@@ -48,6 +51,7 @@
         <mat-form-field appearance="outline">
           <input matInput [(ngModel)]="pcid" maxlength="2" placeholder="PC-ID">
         </mat-form-field>
+        <button (click)="openDialog()" mat-icon-button color="primary"><mat-icon matGridListIcon>info</mat-icon></button>
         <button (click)="makeReservation()" mat-raised-button color="primary">Reservieren</button>
     </mat-expansion-panel>
   </mat-accordion>

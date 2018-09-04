@@ -19,6 +19,6 @@ export class ReservationService {
   }
 
   postReservation(json) {
-    return this._http.put('https://reservation.cm.tm.kit.edu/reservation', json, httpOptions);
+    return this._http.post('https://reservation.cm.tm.kit.edu/reservation', json, httpOptions);
   }
 }

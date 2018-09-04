@@ -17,3 +17,7 @@ button {
 .panel {
     margin-top: 5vh;
 }
+
+td.delete-column {
+    padding: 10000px;
+}

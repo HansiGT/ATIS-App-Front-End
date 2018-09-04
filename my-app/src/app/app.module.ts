@@ -60,6 +60,7 @@ import { OpeningHoursDialogComponent } from './opening-hours-dialog/opening-hour
 import { InterceptorModule } from './interceptor.module';
 import { IdElementDialogComponent } from './id-element-dialog/id-element-dialog.component';
 import { ReservationComponent } from './reservation/reservation.component';
+import { ReservationDialogComponent } from './reservation-dialog/reservation-dialog.component';
 
 
 @NgModule({
@@ -74,7 +75,8 @@ import { ReservationComponent } from './reservation/reservation.component';
     LayoutEditorComponent,
     OpeningHoursDialogComponent,
     IdElementDialogComponent,
-    ReservationComponent
+    ReservationComponent,
+    ReservationDialogComponent
   ],
   imports: [
     NgbModule.forRoot(),
@@ -105,7 +107,8 @@ import { ReservationComponent } from './reservation/reservation.component';
   ],
   entryComponents: [
     OpeningHoursDialogComponent,
-    IdElementDialogComponent
+    IdElementDialogComponent,
+    ReservationDialogComponent
   ],
   providers: [PredictionService, CurrentUtilizationService, OpeningHoursService],
   bootstrap: [AppComponent]
