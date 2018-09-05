@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { NgbModule, NgbDatepicker } from '@ng-bootstrap/ng-bootstrap';
-import { NgbDatepickerPopup } from "./datepicker/datepicker.component";
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PredictionService } from './prediction.service';
@@ -66,7 +65,6 @@ import { ReservationDialogComponent } from './reservation-dialog/reservation-dia
 @NgModule({
   declarations: [
     AppComponent,
-    NgbDatepickerPopup,
     MainNavComponent,
     PredictionComponent,
     OpeningHoursComponent,

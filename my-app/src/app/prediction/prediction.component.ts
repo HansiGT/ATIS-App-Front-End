@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { PredictionService } from '../prediction.service';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material';
 import { Chart } from 'chart.js';
 import { Meta } from '../../../node_modules/@angular/platform-browser';
 
@@ -9,6 +11,7 @@ import { Meta } from '../../../node_modules/@angular/platform-browser';
   styleUrls: ['./prediction.component.css']
 })
 export class PredictionComponent implements OnInit {
+  date: Date;
   value = 0;
   initData = [1,1,1,1,1,1];
   chart = new Chart('canvas', {
@@ -17,7 +20,6 @@ export class PredictionComponent implements OnInit {
         labels: ["8:00 - 9:30", "9:45 - 11:15", "11:30 - 13:00",
          "14:00 - 15:30", "15:45 - 17:15", "17:30 - 19:00"],
         datasets: [{
-            label: '# von belegten Plätzen',
             data: this.initData,
             backgroundColor: [
                 'rgb(102, 16, 242)',
@@ -29,6 +31,9 @@ export class PredictionComponent implements OnInit {
         }]
     },
     options: {
+        legend: {
+            display: false,
+        },
         scales: {
             yAxes: [{
                 display: true,
@@ -49,7 +54,7 @@ export class PredictionComponent implements OnInit {
 
   ngOnInit() {
       const now = new Date();
-      this._prediction.getPrediction(now.getDay())
+      this._prediction.getPrediction(now.getFullYear() + ("0" + (now.getMonth() + 1)).slice(-2) + ("0" + now.getDate()).slice(-2))
         .subscribe(res => {
           this.chart = new Chart('canvas', {
             type: 'bar',
@@ -57,7 +62,6 @@ export class PredictionComponent implements OnInit {
                 labels: ["8:00 - 9:30", "9:45 - 11:15", "11:30 - 13:00",
                  "14:00 - 15:30", "15:45 - 17:15", "17:30 - 19:00", "19:00-21:00"],
                 datasets: [{
-                    label: 'Belegte Plätze',
                     data: res,
                     backgroundColor: [
                       'rgb(63, 81, 181)',
@@ -81,6 +85,9 @@ export class PredictionComponent implements OnInit {
                 }]
             },
             options: {
+                legend: {
+                    display: false,
+                },
                 scales: {
                     yAxes: [{
                         display: true,
@@ -96,11 +103,8 @@ export class PredictionComponent implements OnInit {
         })
   }
 
-  getDayOfWeek(dow: number) {
-  }
-
-  displayPrediction(weekDayNumber: number) {
-      this._prediction.getPrediction(weekDayNumber)
+  displayPrediction() {
+      this._prediction.getPrediction(this.date.getFullYear() + ("0" + (this.date.getMonth() + 1)).slice(-2) + ("0" + this.date.getDate()).slice(-2))
         .subscribe(res => {
           this.chart.data.datasets[0].data = res;
           this.chart.update();

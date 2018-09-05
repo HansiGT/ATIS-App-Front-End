@@ -1,5 +1,12 @@
-h1 {
-    font-size: 6vw;
-	text-align: center;
-    margin: 4vw;
+h2 {
+    text-align: center;
+    margin: 3vh;
+}
+
+.picker {
+    left: 35vw;
+}
+
+button {
+    margin-left: 5vw;
 }

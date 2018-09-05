@@ -22,7 +22,7 @@ export class ReservationComponent implements OnInit {
   time;
   pcid;
   minDate = new Date();
-  displayedColumns: string[] = ['user', 'id', 'date', 'delete'];
+  displayedColumns: string[] = ['user', 'id', 'date'];
   dataSource;
 
   constructor(private meta: Meta, private _ReservationService: ReservationService, public dialog: MatDialog) { 
@@ -34,7 +34,7 @@ export class ReservationComponent implements OnInit {
     this._ReservationService.getReservation().subscribe((data:any) => {
       this.dataSource = [];
       data.forEach(data => {
-        this.dataSource.push({user: data.name, id: data.elementId, date: data.start + " - " + data.end + ", " + data.day, delete:"delete"});
+        this.dataSource.push({user: data.name, id: data.elementId, date: data.start + " - " + data.end + ", " + data.day});
       })
     })
   }

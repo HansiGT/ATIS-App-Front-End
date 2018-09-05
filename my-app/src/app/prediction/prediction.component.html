@@ -1,8 +1,13 @@
 <app-main-nav>
-<h1>
+<h2>
   Vorhersage
-</h1>
-<ngbd-datepicker-popup (myClick) = "displayPrediction($event);"> </ngbd-datepicker-popup>
+</h2>
+<mat-form-field appearance="outline">
+  <input matInput [(ngModel)]="date" [matDatepicker]="picker" (click)="picker.open()" placeholder="Tag auswählen">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker touchUi #picker disabled="false"></mat-datepicker>
+</mat-form-field>
+<button mat-raised-button color="primary" (click)="displayPrediction()">Anzeigen</button>
 <div *ngIf="chart">
   <canvas id="canvas" height = "300">{{ chart }}</canvas>
 </div>

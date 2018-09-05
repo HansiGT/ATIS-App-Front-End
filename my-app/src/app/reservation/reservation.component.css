@@ -11,13 +11,9 @@ table {
 
 button {
     margin-top: 1vh;
-    margin-left: 20vw;
+    margin-left: 5vw;
 }
 
 .panel {
     margin-top: 5vh;
-}
-
-td.delete-column {
-    padding: 10000px;
 }

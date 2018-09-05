@@ -13,10 +13,6 @@
       <th mat-header-cell *matHeaderCellDef> Termin </th>
       <td mat-cell *matCellDef="let element">{{element.date}}</td>
     </ng-container>
-    <ng-container matColumnDef="delete">
-      <th mat-header-cell *matHeaderCellDef></th>
-      <td mat-cell *matCellDef="let element"><button mat-icon-button><mat-icon matGridListIcon>{{element.delete}}</mat-icon></button></td>
-    </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
@@ -50,9 +46,9 @@
         </mat-form-field>
         <mat-form-field appearance="outline">
           <input matInput [(ngModel)]="pcid" maxlength="2" placeholder="PC-ID">
+          <mat-icon matSuffix (click)="openDialog()" color="primary">info</mat-icon>
         </mat-form-field>
-        <button (click)="openDialog()" mat-icon-button color="primary"><mat-icon matGridListIcon>info</mat-icon></button>
-        <button (click)="makeReservation()" mat-raised-button color="primary">Reservieren</button>
+        <button mat-raised-button color="primary" (click)="makeReservation()" >Reservieren</button>
     </mat-expansion-panel>
   </mat-accordion>
   </div>
