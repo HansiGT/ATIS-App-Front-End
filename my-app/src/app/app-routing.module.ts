@@ -6,6 +6,7 @@ import { FrontPageComponent } from './front-page/front-page.component';
 import { CurrentUtilizationComponent } from './current-utilization/current-utilization.component';
 import { LayoutEditorComponent } from './layout-editor/layout-editor.component';
 import { ReservationComponent } from './reservation/reservation.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: 'reservation',
     component: ReservationComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   }
 ];
 

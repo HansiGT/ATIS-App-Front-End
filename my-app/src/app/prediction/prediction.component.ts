@@ -110,4 +110,10 @@ export class PredictionComponent implements OnInit {
           this.chart.update();
         })
   }
+  displayPredictionS() {
+     this._prediction.getPredictionS(this.date.getDay()).subscribe(res => {
+        this.chart.data.datasets[0].data = res;
+        this.chart.update();
+      })
+    }
 }

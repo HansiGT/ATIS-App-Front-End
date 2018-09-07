@@ -6,10 +6,11 @@ import 'rxjs/add/operator/do';
 @Injectable()
 export class HttpsRequestInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    console.log('lul')
     const dupReq = req.clone({ headers: req.headers.set('Access-Control-Allow-Origin','https://reservation.cm.tm.kit.edu') });
-    return next.handle(dupReq);
-  }
+    return next.handle(dupReq); 
 };
+}
 @NgModule({
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpsRequestInterceptor, multi: true }
