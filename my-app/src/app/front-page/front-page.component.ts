@@ -84,7 +84,7 @@ export class FrontPageComponent implements OnInit {
     this._currentUtilizationService.getUtilization()
       .subscribe(res => {
         this.numberOfFreePCs = res['free'];
-        this.numberOfAllPCs = res['free'] + res['occupied'];
+        this.numberOfAllPCs = res['max'];
       })
   }
 

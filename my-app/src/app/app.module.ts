@@ -61,6 +61,7 @@ import { IdElementDialogComponent } from './id-element-dialog/id-element-dialog.
 import { ReservationComponent } from './reservation/reservation.component';
 import { ReservationDialogComponent } from './reservation-dialog/reservation-dialog.component';
 import { LoginComponent } from './login/login.component';
+import { NgProgressModule } from '@ngx-progressbar/core';
 
 
 @NgModule({
@@ -104,6 +105,8 @@ import { LoginComponent } from './login/login.component';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
+    MatProgressSpinnerModule,
+    NgProgressModule
   ],
   entryComponents: [
     OpeningHoursDialogComponent,
