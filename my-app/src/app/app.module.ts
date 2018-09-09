@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { NgbModule, NgbDatepicker } from '@ng-bootstrap/ng-bootstrap';
-import { NgbDatepickerPopup } from "./datepicker/datepicker.component";
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PredictionService } from './prediction.service';
@@ -59,12 +58,15 @@ import { DraggableModule } from './draggable/draggable.module';
 import { OpeningHoursDialogComponent } from './opening-hours-dialog/opening-hours-dialog.component';
 import { InterceptorModule } from './interceptor.module';
 import { IdElementDialogComponent } from './id-element-dialog/id-element-dialog.component';
+import { ReservationComponent } from './reservation/reservation.component';
+import { ReservationDialogComponent } from './reservation-dialog/reservation-dialog.component';
+import { LoginComponent } from './login/login.component';
+import { NgProgressModule } from '@ngx-progressbar/core';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NgbDatepickerPopup,
     MainNavComponent,
     PredictionComponent,
     OpeningHoursComponent,
@@ -72,7 +74,10 @@ import { IdElementDialogComponent } from './id-element-dialog/id-element-dialog.
     CurrentUtilizationComponent,
     LayoutEditorComponent,
     OpeningHoursDialogComponent,
-    IdElementDialogComponent
+    IdElementDialogComponent,
+    ReservationComponent,
+    ReservationDialogComponent,
+    LoginComponent
   ],
   imports: [
     NgbModule.forRoot(),
@@ -91,15 +96,22 @@ import { IdElementDialogComponent } from './id-element-dialog/id-element-dialog.
     MatIconModule,
     MatListModule,
     MatDialogModule,
+    MatExpansionModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatTableModule,
     AppRoutingModule,
     DraggableModule,
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
+    MatProgressSpinnerModule,
+    NgProgressModule
   ],
   entryComponents: [
     OpeningHoursDialogComponent,
-    IdElementDialogComponent
+    IdElementDialogComponent,
+    ReservationDialogComponent
   ],
   providers: [PredictionService, CurrentUtilizationService, OpeningHoursService],
   bootstrap: [AppComponent]

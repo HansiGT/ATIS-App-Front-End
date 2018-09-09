@@ -17,9 +17,13 @@
        under the License.
  */
 
+
 package io.cordova.hellocordova;
 
 import android.os.Bundle;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+
 import org.apache.cordova.*;
 
 public class MainActivity extends CordovaActivity
@@ -37,5 +41,11 @@ public class MainActivity extends CordovaActivity
 
         // Set by <content src="index.html" /> in config.xml
         loadUrl(launchUrl);
+        WebView webView = (WebView) appView.getEngine().getView();
+        WebSettings settings = webView.getSettings();
+        settings.setBuiltInZoomControls(true);
+        settings.setDefaultZoom(WebSettings.ZoomDensity.MEDIUM);
+        settings.setSupportZoom(true);
+        settings.setDisplayZoomControls(false);
     }
 }

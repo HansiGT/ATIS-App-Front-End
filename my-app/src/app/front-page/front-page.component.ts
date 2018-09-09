@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OpeningHoursService } from '../opening-hours.service';
 import { CurrentUtilizationService } from '../current-utilization.service';
+import { Meta } from '../../../node_modules/@angular/platform-browser';
 
 /*
 each tile has text that it will display, a link to the page that the text describes
@@ -46,7 +47,7 @@ export class FrontPageComponent implements OnInit {
 
     {
       text: 'Reservierungen',
-      routerLink: 'NONE',
+      routerLink: '/reservation',
       imgSrc: 'event_available',
       cols: 1,
       rows: 1,
@@ -75,13 +76,15 @@ export class FrontPageComponent implements OnInit {
 
   numberOfFreePCs;
   numberOfAllPCs;
-  constructor(private _OpeningHoursService: OpeningHoursService, private _currentUtilizationService: CurrentUtilizationService) { }
+  constructor(private _OpeningHoursService: OpeningHoursService, private _currentUtilizationService: CurrentUtilizationService, private meta: Meta) { 
+    this.meta.updateTag({ name:"viewport", content: 'user-scalable=yes, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi' });
+  }
 
   ngOnInit() {
     this._currentUtilizationService.getUtilization()
       .subscribe(res => {
         this.numberOfFreePCs = res['free'];
-        this.numberOfAllPCs = res['free'] + res['occupied'];
+        this.numberOfAllPCs = res['max'];
       })
   }
 

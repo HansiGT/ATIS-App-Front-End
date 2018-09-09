@@ -7,9 +7,14 @@ export class PredictionService {
 
   constructor(private _http: HttpClient) { }
 
-  getPrediction(weekDayNumber: number) {
+  getPrediction(date) {
+    var url = 'https://utilization.cm.tm.kit.edu/prediction/date/' + date;
+    return this._http.get(url);
+  }
+
+  getPredictionS(weekDayNumber) {
     var weekDayString = '';
-    switch (weekDayNumber) {
+      switch (weekDayNumber) {
       case 0:
         weekDayString = 'SUNDAY';
         break;
@@ -20,7 +25,7 @@ export class PredictionService {
         weekDayString = 'TUESDAY';
         break;
       case 3:
-        weekDayString = 'WEDNESDAY';
+       weekDayString = 'WEDNESDAY';
         break;
       case 4:
         weekDayString = 'THURSDAY';

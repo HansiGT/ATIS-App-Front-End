@@ -1,0 +1,4 @@
+#Tue Sep 04 00:15:45 CEST 2018
+base.0=D\:\\PSE\\dev\\iot_atis_iosb_frontend\\ATIS_IOSB\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\9
+path.0=classes.dex
+renamed.0=classes.dex
