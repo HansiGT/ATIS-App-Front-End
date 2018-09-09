@@ -66,12 +66,12 @@ export class CurrentUtilizationComponent implements OnInit {
             context.stroke();
 
             room.portalGates.forEach(function(portalGate) {
-                if (portalGate.type == "passage") {
+                if (portalGate.type == "door" || portalGate.type == "passage") {
                 var canvas = <HTMLCanvasElement> document.getElementById('doorCanvas');
                 var doorContext = canvas.getContext('2d');
                 doorContext.beginPath();
-                doorContext.moveTo(unit*portalGate.pos[0].x, unit*portalGate.pos[0].y - unit*2);
-                doorContext.lineTo(unit*portalGate.pos[1].x, unit*portalGate.pos[1].y - unit*2);
+                doorContext.moveTo(unit*portalGate.pos[0].x, unit*portalGate.pos[0].y );
+                doorContext.lineTo(unit*portalGate.pos[1].x, unit*portalGate.pos[1].y );
                 doorContext.lineWidth = unit*3;
                 doorContext.strokeStyle="#1e90ff";
                 doorContext.closePath();
@@ -89,7 +89,7 @@ export class CurrentUtilizationComponent implements OnInit {
             return "url('assets/img/current-utilization-icons/win_free.svg')";
         case "Laptop":
             return "url('assets/img/current-utilization-icons/laptop.png')";
-        case "printer":
+        case "Printer":
             return "url('assets/img/current-utilization-icons/printer.svg')";
         case "wall":
             return "black";
