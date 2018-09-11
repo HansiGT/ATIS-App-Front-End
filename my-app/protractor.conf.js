@@ -1,4 +1,6 @@
-//protractor "--baseUrl" "http://localhost:4200/"
+//protractor 
+//protractor "--baseUrl" "gewünschteUrl"
+//standart baseUrl: http://localhost:4200/
 
 // conf.js
 exports.config = {
@@ -28,9 +30,9 @@ exports.config = {
     strict: true,
     // <string[]> (type[:path]) specify the output format, optionally supply PATH to redirect formatter output (repeatable)
     format: [
-      'json:./reports/cucumber_report.json', 
-      'progress', 
-      //'pretty:./reports/cucumber_report.txt'
+      'json:./e2e/reports/cucumber_report.json', 
+      //'progress', 
+      //'pretty:./e2e/reports/cucumber_report.txt'
     ]
   },
   // Enable TypeScript for the tests
