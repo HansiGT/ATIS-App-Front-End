@@ -1,0 +1,68 @@
+[
+  {
+    "description": "    As an admin\n    I want to make sure my test work\n    So that my tutors won't be mad at me and give me a bad grade",
+    "keyword": "Feature",
+    "name": "Testing basic functionality",
+    "line": 1,
+    "id": "testing-basic-functionality",
+    "tags": [],
+    "uri": "e2e\\features\\_simple_feature.feature",
+    "elements": [
+      {
+        "id": "testing-basic-functionality;redirects-to-frontpage",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "Redirects to frontpage",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e\\features\\step_definitions\\_simple_feature.steps.ts:8"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "I am on the page",
+            "match": {
+              "location": "e2e\\features\\step_definitions\\_simple_feature.steps.ts:12"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "I should be redirected to the frontpage",
+            "match": {
+              "location": "e2e\\features\\step_definitions\\_simple_feature.steps.ts:16"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules\\protractor-cucumber-framework\\lib\\resultsCapturer.js:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

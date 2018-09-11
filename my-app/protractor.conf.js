@@ -1,3 +1,5 @@
+//protractor "--baseUrl" "http://localhost:4200/"
+
 // conf.js
 exports.config = {
   // Specs here are the cucumber feature files
@@ -28,7 +30,7 @@ exports.config = {
     format: [
       'json:./reports/cucumber_report.json', 
       'progress', 
-      'pretty:./reports/cucumber_report.txt'
+      //'pretty:./reports/cucumber_report.txt'
     ]
   },
   // Enable TypeScript for the tests

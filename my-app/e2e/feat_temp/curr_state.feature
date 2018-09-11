@@ -5,7 +5,7 @@ Feature: Learning desks with PC with their current state
 
 	Background:
 		Given I am on the “CurrentState” page
-
+		
 		Examples: States
 			| state    |
 			| free     |

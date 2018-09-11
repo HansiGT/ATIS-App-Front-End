@@ -4,5 +4,5 @@ Feature: Testing basic functionality
     So that my tutors won't be mad at me and give me a bad grade
 
     Scenario: Redirects to frontpage
-        When I go to the page
+        When I am on the page
         Then I should be redirected to the frontpage
