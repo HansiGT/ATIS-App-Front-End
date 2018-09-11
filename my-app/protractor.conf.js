@@ -26,14 +26,14 @@ exports.config = {
     require: [
       './e2e/features/step_definitions/**/*.steps.ts'
     ],
+
     // <boolean> fail if there are any undefined or pending steps
     strict: true,
     // <string[]> (type[:path]) specify the output format, optionally supply PATH to redirect formatter output (repeatable)
     format: [
-      'json:./e2e/reports/cucumber_report.json', 
-      //'progress', 
-      //'pretty:./e2e/reports/cucumber_report.txt'
-    ]
+      'json:./e2e/reports/cucumber_report.json',
+      'progress',
+    ],
   },
   // Enable TypeScript for the tests
   onPrepare() {
