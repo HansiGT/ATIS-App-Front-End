@@ -9,11 +9,11 @@ defineSupportCode(({ Given, When, Then, Before }) => {
         app = new AppPage();
     });
 
-    When('I am on the page', function () {
+    When('I am on the page', () => {
         () => app.navigateTo()
     });
 
-    Then('I should be redirected to the frontpage', function () {
+    Then('I should be redirected to the frontpage', () => {
         () => app.matchUrl("/frontpage");
     });
 });
