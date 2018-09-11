@@ -20,15 +20,15 @@ exports.config = {
   cucumberOpts: {
     // require step definition files before executing features
     require: [
-      './e2e/features/step_definitions/**/*.steps.js'
+      './e2e/features/step_definitions/**/*.steps.ts'
     ],
     // <boolean> fail if there are any undefined or pending steps
     strict: true,
     // <string[]> (type[:path]) specify the output format, optionally supply PATH to redirect formatter output (repeatable)
     format: [
-      'json:./e2e/cucumber_report.json', 
+      'json:./reports/cucumber_report.json', 
       'progress', 
-      'pretty:./e2e/cucumber_report.txt'
+      'pretty:./reports/cucumber_report.txt'
     ]
   },
   // Enable TypeScript for the tests
