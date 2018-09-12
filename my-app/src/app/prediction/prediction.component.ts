@@ -13,7 +13,8 @@ import { Meta } from '../../../node_modules/@angular/platform-browser';
   styleUrls: ['./prediction.component.css']
 })
 export class PredictionComponent implements OnInit {
-  date: Date;
+  minDate = new Date();
+  date = new Date();
   color = "primary";
   mode = "indeterminate";
   value = 50;

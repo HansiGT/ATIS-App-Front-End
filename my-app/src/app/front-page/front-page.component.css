@@ -1,10 +1,14 @@
 .material-icons{
-    font-size: 24px;
-    /*vertical-align: middle;*/
+    margin-top: 3vh;
+    font-size: 6vh;
+    height: 6vh;
+    width: 6vh;
 }
 
 a{
     color: white;
+    text-align: center;
+    vertical-align: middle;
 }
 
 h2{
@@ -21,4 +25,8 @@ h2{
 
 .tilegrid {
     margin: 3vw;
+}
+
+p {
+    text-align: center;
 }

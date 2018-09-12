@@ -70,7 +70,7 @@ export class ReservationComponent implements OnInit {
     if((this.name != undefined) && (this.name != "") && (this.pcid != undefined) && (this.pcid != "")){
       console.log(json);
       this._ReservationService.postReservation(JSON.stringify(json)).subscribe((data:any) => {console.log(data)});
-      location.reload();
+      window.location.reload(true);
     }
   }
 }
