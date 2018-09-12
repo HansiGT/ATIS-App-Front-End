@@ -3,10 +3,18 @@ h2 {
     margin: 3vh;
 }
 
-.picker {
-    left: 35vw;
+.test {
+    text-align: center;
+}
+
+.date {
+    display: inline-block;
+}
+
+.selector {
+    display: inline-block;
 }
 
 button {
-    margin-left: 5vw;
+    margin: 5vw;
 }

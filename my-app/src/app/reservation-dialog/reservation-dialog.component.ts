@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Meta } from '../../../node_modules/@angular/platform-browser';
 
 @Component({
   selector: 'app-reservation-dialog',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReservationDialogComponent implements OnInit {
 
-  constructor() { }
+  constructor(private meta: Meta) {
+    this.meta.updateTag({ name:"viewport", content: 'user-scalable=yes, initial-scale=1, maximum-scale=2, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi' });
+   }
 
   ngOnInit() {
   }

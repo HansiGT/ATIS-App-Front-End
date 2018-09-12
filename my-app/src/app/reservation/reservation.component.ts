@@ -7,6 +7,7 @@ import {MatNativeDateModule} from '@angular/material';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MatDialog } from '@angular/material';
 import { ReservationDialogComponent } from '../reservation-dialog/reservation-dialog.component';
+import {FormControl, Validators} from '@angular/forms';
 import { Meta } from '../../../node_modules/@angular/platform-browser';
 
 @Component({
@@ -24,6 +25,20 @@ export class ReservationComponent implements OnInit {
   minDate = new Date();
   displayedColumns: string[] = ['user', 'id', 'date'];
   dataSource;
+  nameCheck = new FormControl('', [Validators.required]);
+  idCheck = new FormControl('', Validators.compose([
+    Validators.required,
+    Validators.pattern('[0-9]*')
+  ]));
+
+  nameError() {
+    this.nameCheck.hasError('required') ? 'Bitte geben sie einen Namen ein' : '';
+  }
+
+  idError() {
+    this.idCheck.hasError('required') ? 'Bitte geben sie einen Namen ein' : '';
+  }
+
 
   constructor(private meta: Meta, private _ReservationService: ReservationService, public dialog: MatDialog) { 
     this.meta.updateTag({ name:"viewport", content: 'user-scalable=yes, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi' });
@@ -55,6 +70,7 @@ export class ReservationComponent implements OnInit {
     if((this.name != undefined) && (this.name != "") && (this.pcid != undefined) && (this.pcid != "")){
       console.log(json);
       this._ReservationService.postReservation(JSON.stringify(json)).subscribe((data:any) => {console.log(data)});
+      location.reload();
     }
   }
 }

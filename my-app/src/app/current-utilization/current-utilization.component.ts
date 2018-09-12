@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CurrentUtilizationService } from '../current-utilization.service';
 import { Meta } from '../../../node_modules/@angular/platform-browser';
+import { NgProgress } from '@ngx-progressbar/core';
 declare var jquery:any;
 declare var $ :any;
 
@@ -23,11 +24,12 @@ export class CurrentUtilizationComponent implements OnInit {
   test = 10;
   unit = screen.width / 162;
 
-  constructor(private _currentUtilizationService: CurrentUtilizationService, private meta:Meta) {
+  constructor(private _currentUtilizationService: CurrentUtilizationService, private meta:Meta, public progress: NgProgress) {
     this.meta.updateTag({ name:"viewport", content: 'user-scalable=yes, initial-scale=1, maximum-scale=2, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi' });
   }
 
   ngOnInit() {
+    this.progress.start();
     this.displayLayout();
     this.getUtilizationInformation();
 
@@ -68,12 +70,12 @@ export class CurrentUtilizationComponent implements OnInit {
             context.stroke();
 
             room.portalGates.forEach(function(portalGate) {
-                if (portalGate.type == "passage") {
+                if (portalGate.type == "door" || portalGate.type == "passage") {
                 var canvas = <HTMLCanvasElement> document.getElementById('doorCanvas');
                 var doorContext = canvas.getContext('2d');
                 doorContext.beginPath();
-                doorContext.moveTo(unit*portalGate.pos[0].x, unit*portalGate.pos[0].y - unit*2);
-                doorContext.lineTo(unit*portalGate.pos[1].x, unit*portalGate.pos[1].y - unit*2);
+                doorContext.moveTo(unit*portalGate.pos[0].x, unit*portalGate.pos[0].y );
+                doorContext.lineTo(unit*portalGate.pos[1].x, unit*portalGate.pos[1].y );
                 doorContext.lineWidth = unit*3;
                 doorContext.strokeStyle="#1e90ff";
                 doorContext.closePath();
@@ -91,7 +93,7 @@ export class CurrentUtilizationComponent implements OnInit {
             return "url('assets/img/current-utilization-icons/win_free.svg')";
         case "Laptop":
             return "url('assets/img/current-utilization-icons/laptop.png')";
-        case "printer":
+        case "Printer":
             return "url('assets/img/current-utilization-icons/printer.svg')";
         case "wall":
             return "black";
@@ -102,6 +104,7 @@ export class CurrentUtilizationComponent implements OnInit {
   updateCurrentStateOfElement() {
     this._currentUtilizationService.getState()
       .subscribe(res => {
+        this.progress.complete();
         res['data'].forEach(element => {
           var stateIconURL;
           switch (element.state) {
