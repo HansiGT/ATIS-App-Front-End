@@ -8,7 +8,7 @@ export class CurrentUtilizationService {
   constructor(private _http: HttpClient) { }
 
   getLayout() {
-    var url = 'https://workspace.cm.tm.kit.edu/layout/id/2';
+    var url = 'https://workspace.cm.tm.kit.edu/layout/id/1';
     return this._http.get(url);
   }
 

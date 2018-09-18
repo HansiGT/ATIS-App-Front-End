@@ -8,6 +8,8 @@ import {LoginService} from '../login.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  password;
+  name;
 
   constructor(private _LoginService: LoginService) { }
 
@@ -15,7 +17,7 @@ export class LoginComponent implements OnInit {
   }
 
   checkLogin() {
-    this._LoginService.getLogin().subscribe((data:any) => {console.log(data)});
+    this._LoginService.getLogin(this.name,this.password).subscribe((data:any) => {console.log(data)});
   }
 
 }
