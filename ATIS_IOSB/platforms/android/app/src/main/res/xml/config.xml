@@ -26,4 +26,5 @@
     <icon density="xxhdpi" src="/res/icon/android/icon-144-xxhdpi.png" />
     <icon density="xxxhdpi" src="/res/icon/android/icon-192-xxxhdpi.png" />
     <preference name="loglevel" value="DEBUG" />
+    <preference name="Orientation" value="portrait" />
 </widget>

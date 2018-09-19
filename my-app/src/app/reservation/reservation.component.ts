@@ -9,6 +9,7 @@ import { MatDialog } from '@angular/material';
 import { ReservationDialogComponent } from '../reservation-dialog/reservation-dialog.component';
 import {FormControl, Validators} from '@angular/forms';
 import { Meta } from '../../../node_modules/@angular/platform-browser';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-reservation',
@@ -40,7 +41,7 @@ export class ReservationComponent implements OnInit {
   }
 
 
-  constructor(private meta: Meta, private _ReservationService: ReservationService, public dialog: MatDialog) { 
+  constructor(private meta: Meta, private _ReservationService: ReservationService, public dialog: MatDialog, private router: Router) { 
     this.meta.updateTag({ name:"viewport", content: 'user-scalable=yes, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi' });
   }
 
@@ -69,8 +70,14 @@ export class ReservationComponent implements OnInit {
     var json = { "elementId":this.pcid, "start": start, "name": this.name, "end": end, "type": "PC", "day": formattedDate, "workspaceId":1};
     if((this.name != undefined) && (this.name != "") && (this.pcid != undefined) && (this.pcid != "")){
       console.log(json);
-      this._ReservationService.postReservation(JSON.stringify(json)).subscribe((data:any) => {console.log(data)});
-      window.location.reload(true);
+      this._ReservationService.postReservation(JSON.stringify(json)).subscribe((data:any) => {
+        console.log(data);
+        if(this.router.url == '/reservation') {
+          this.router.navigateByUrl('/refreshReservation');
+          } else {
+            this.router.navigateByUrl('/reservation');
+        }
+      });
     }
   }
 }

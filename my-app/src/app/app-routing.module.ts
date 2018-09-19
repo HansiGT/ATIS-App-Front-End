@@ -39,6 +39,10 @@ const routes: Routes = [
     component: ReservationComponent
   },
   {
+    path: 'refreshReservation',
+    component: ReservationComponent
+  },
+  {
     path: 'login',
     component: LoginComponent
   }

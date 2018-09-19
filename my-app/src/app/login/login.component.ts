@@ -10,6 +10,7 @@ import {LoginService} from '../login.service';
 export class LoginComponent implements OnInit {
   password;
   name;
+  hide = true;
 
   constructor(private _LoginService: LoginService) { }
 
