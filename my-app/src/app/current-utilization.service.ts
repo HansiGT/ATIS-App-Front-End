@@ -8,17 +8,17 @@ export class CurrentUtilizationService {
   constructor(private _http: HttpClient) { }
 
   getLayout() {
-    var url = 'https://workspace.cm.tm.kit.edu/layout/id/1';
+    var url = 'https://bff-atis-app.cm.tm.kit.edu/layouts/1';
     return this._http.get(url);
   }
 
   getState() {
-    var url = 'https://utilization.cm.tm.kit.edu/currentState';
+    var url = 'https://bff-atis-app.cm.tm.kit.edu/utilisation/workspaceState';
     return this._http.get(url);
   }
 
   getUtilization() {
-    var url = 'https://utilization.cm.tm.kit.edu/currentUtilization';
+    var url = 'https://bff-atis-app.cm.tm.kit.edu/utilisation';
     return this._http.get(url);
   }
 

@@ -15,10 +15,6 @@ export class OpeningHoursService {
   constructor(private _http: HttpClient) { }
 
   getOpeningHours(){
-    return this._http.get('https://workspace.cm.tm.kit.edu/opening-hours');
-  }
-
-  putOpeningHours(json) {
-    return this._http.put('https://workspace.cm.tm.kit.edu/opening-hours/', json, httpOptions);
+    return this._http.get('https://bff-atis-app.cm.tm.kit.edu/opening-hours');
   }
 }

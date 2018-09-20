@@ -15,10 +15,10 @@ export class ReservationService {
   constructor(private _http: HttpClient) { }
 
   getReservation() {
-    return this._http.get('https://reservation.cm.tm.kit.edu/reservation');
+    return this._http.get('https://bff-atis-app.cm.tm.kit.edu/reservation');
   }
 
   postReservation(json) {
-    return this._http.post('https://reservation.cm.tm.kit.edu/reservation', json, httpOptions);
+    return this._http.post('https://bff-atis-app.cm.tm.kit.edu/reservation', json, httpOptions);
   }
 }
