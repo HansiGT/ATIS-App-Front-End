@@ -1,0 +1,77 @@
+===============================================================================
+EXTENSION NAME : linecount
+EXTENSION VERSION : 0.1.7
+-------------------------------------------------------------------------------
+count time : 2018-09-24 19:09:26
+count workspace : c:\Users\ratzh\OneDrive\Dokumente\PSE\ui_atis_app\my-app\src\app
+total files : 65
+total code lines : 1991
+total comment lines : 70
+total blank lines : 287
+
+app-routing.module.spec.ts, code is 10, comment is 0, blank is 3.
+app-routing.module.ts, code is 53, comment is 0, blank is 2.
+app.component.css, code is 14, comment is 0, blank is 2.
+app.component.html, code is 1, comment is 0, blank is 0.
+app.component.spec.ts, code is 27, comment is 1, blank is 4.
+app.component.ts, code is 8, comment is 0, blank is 2.
+app.module.ts, code is 116, comment is 0, blank is 3.
+current-utilization.service.ts, code is 19, comment is 0, blank is 6.
+current-utilization\current-utilization.component.css, code is 29, comment is 0, blank is 13.
+current-utilization\current-utilization.component.html, code is 20, comment is 0, blank is 3.
+current-utilization\current-utilization.component.spec.ts, code is 24, comment is 1, blank is 4.
+current-utilization\current-utilization.component.ts, code is 126, comment is 2, blank is 14.
+draggable\draggable.directive.spec.ts, code is 7, comment is 0, blank is 1.
+draggable\draggable.directive.ts, code is 32, comment is 1, blank is 9.
+draggable\draggable.module.spec.ts, code is 10, comment is 0, blank is 3.
+draggable\draggable.module.ts, code is 11, comment is 0, blank is 1.
+front-page\front-page.component.css, code is 27, comment is 0, blank is 5.
+front-page\front-page.component.html, code is 25, comment is 0, blank is 0.
+front-page\front-page.component.spec.ts, code is 36, comment is 1, blank is 8.
+front-page\front-page.component.ts, code is 65, comment is 17, blank is 10.
+id-element-dialog\id-element-dialog.component.css, code is 0, comment is 0, blank is 0.
+id-element-dialog\id-element-dialog.component.html, code is 10, comment is 0, blank is 0.
+id-element-dialog\id-element-dialog.component.spec.ts, code is 20, comment is 0, blank is 5.
+id-element-dialog\id-element-dialog.component.ts, code is 19, comment is 0, blank is 7.
+interceptor.module.ts, code is 18, comment is 0, blank is 0.
+layout-editor\layout-editor.component.css, code is 29, comment is 0, blank is 4.
+layout-editor\layout-editor.component.html, code is 52, comment is 4, blank is 8.
+layout-editor\layout-editor.component.spec.ts, code is 24, comment is 1, blank is 4.
+layout-editor\layout-editor.component.ts, code is 255, comment is 15, blank is 36.
+layout-editor\position.ts, code is 8, comment is 0, blank is 1.
+login.service.spec.ts, code is 12, comment is 0, blank is 3.
+login.service.ts, code is 14, comment is 0, blank is 3.
+login\login.component.css, code is 4, comment is 0, blank is 0.
+login\login.component.html, code is 9, comment is 0, blank is 0.
+login\login.component.spec.ts, code is 20, comment is 0, blank is 5.
+login\login.component.ts, code is 19, comment is 0, blank is 5.
+main-nav\main-nav.component.css, code is 10, comment is 0, blank is 2.
+main-nav\main-nav.component.html, code is 37, comment is 0, blank is 0.
+main-nav\main-nav.component.spec.ts, code is 28, comment is 1, blank is 6.
+main-nav\main-nav.component.ts, code is 16, comment is 1, blank is 5.
+opening-hours-dialog\opening-hours-dialog.component.css, code is 7, comment is 0, blank is 1.
+opening-hours-dialog\opening-hours-dialog.component.html, code is 46, comment is 0, blank is 3.
+opening-hours-dialog\opening-hours-dialog.component.spec.ts, code is 33, comment is 1, blank is 7.
+opening-hours-dialog\opening-hours-dialog.component.ts, code is 45, comment is 1, blank is 11.
+opening-hours.service.spec.ts, code is 16, comment is 1, blank is 4.
+opening-hours.service.ts, code is 16, comment is 0, blank is 4.
+opening-hours\opening-hours.component.css, code is 9, comment is 0, blank is 2.
+opening-hours\opening-hours.component.html, code is 21, comment is 5, blank is 0.
+opening-hours\opening-hours.component.spec.ts, code is 39, comment is 2, blank is 8.
+opening-hours\opening-hours.component.ts, code is 25, comment is 14, blank is 4.
+prediction.service.ts, code is 39, comment is 0, blank is 4.
+prediction\prediction.component.css, code is 16, comment is 0, blank is 4.
+prediction\prediction.component.html, code is 25, comment is 0, blank is 0.
+prediction\prediction.component.spec.ts, code is 30, comment is 1, blank is 6.
+prediction\prediction.component.ts, code is 126, comment is 0, blank is 5.
+reservation-dialog\reservation-dialog.component.css, code is 4, comment is 0, blank is 0.
+reservation-dialog\reservation-dialog.component.html, code is 1, comment is 0, blank is 0.
+reservation-dialog\reservation-dialog.component.spec.ts, code is 20, comment is 0, blank is 5.
+reservation-dialog\reservation-dialog.component.ts, code is 14, comment is 0, blank is 4.
+reservation.service.spec.ts, code is 12, comment is 0, blank is 3.
+reservation.service.ts, code is 19, comment is 0, blank is 5.
+reservation\reservation.component.css, code is 16, comment is 0, blank is 3.
+reservation\reservation.component.html, code is 55, comment is 0, blank is 2.
+reservation\reservation.component.spec.ts, code is 20, comment is 0, blank is 5.
+reservation\reservation.component.ts, code is 73, comment is 0, blank is 10.
+===============================================================================

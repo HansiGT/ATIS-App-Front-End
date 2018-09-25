@@ -1,0 +1,407 @@
+{
+    "extension": "linecount",
+    "version": "0.1.7",
+    "workspace": "c:\\Users\\ratzh\\OneDrive\\Dokumente\\PSE\\ui_atis_app\\my-app\\src\\app",
+    "linecount": [
+        {
+            "version": "0.1.7",
+            "counttime": "2018-09-24 19:09:26",
+            "filesum": 65,
+            "codesum": 1991,
+            "commentsum": 70,
+            "blanksum": 287,
+            "filelist": [
+                {
+                    "blank": 3,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "app-routing.module.spec.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 53,
+                    "comment": 0,
+                    "filename": "app-routing.module.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "app.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "app.component.html"
+                },
+                {
+                    "blank": 4,
+                    "code": 27,
+                    "comment": 1,
+                    "filename": "app.component.spec.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "app.component.ts"
+                },
+                {
+                    "blank": 3,
+                    "code": 116,
+                    "comment": 0,
+                    "filename": "app.module.ts"
+                },
+                {
+                    "blank": 6,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "current-utilization.service.ts"
+                },
+                {
+                    "blank": 13,
+                    "code": 29,
+                    "comment": 0,
+                    "filename": "current-utilization\\current-utilization.component.css"
+                },
+                {
+                    "blank": 3,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "current-utilization\\current-utilization.component.html"
+                },
+                {
+                    "blank": 4,
+                    "code": 24,
+                    "comment": 1,
+                    "filename": "current-utilization\\current-utilization.component.spec.ts"
+                },
+                {
+                    "blank": 14,
+                    "code": 126,
+                    "comment": 2,
+                    "filename": "current-utilization\\current-utilization.component.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "draggable\\draggable.directive.spec.ts"
+                },
+                {
+                    "blank": 9,
+                    "code": 32,
+                    "comment": 1,
+                    "filename": "draggable\\draggable.directive.ts"
+                },
+                {
+                    "blank": 3,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "draggable\\draggable.module.spec.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "draggable\\draggable.module.ts"
+                },
+                {
+                    "blank": 5,
+                    "code": 27,
+                    "comment": 0,
+                    "filename": "front-page\\front-page.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 25,
+                    "comment": 0,
+                    "filename": "front-page\\front-page.component.html"
+                },
+                {
+                    "blank": 8,
+                    "code": 36,
+                    "comment": 1,
+                    "filename": "front-page\\front-page.component.spec.ts"
+                },
+                {
+                    "blank": 10,
+                    "code": 65,
+                    "comment": 17,
+                    "filename": "front-page\\front-page.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "id-element-dialog\\id-element-dialog.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "id-element-dialog\\id-element-dialog.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "id-element-dialog\\id-element-dialog.component.spec.ts"
+                },
+                {
+                    "blank": 7,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "id-element-dialog\\id-element-dialog.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "interceptor.module.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 29,
+                    "comment": 0,
+                    "filename": "layout-editor\\layout-editor.component.css"
+                },
+                {
+                    "blank": 8,
+                    "code": 52,
+                    "comment": 4,
+                    "filename": "layout-editor\\layout-editor.component.html"
+                },
+                {
+                    "blank": 4,
+                    "code": 24,
+                    "comment": 1,
+                    "filename": "layout-editor\\layout-editor.component.spec.ts"
+                },
+                {
+                    "blank": 36,
+                    "code": 255,
+                    "comment": 15,
+                    "filename": "layout-editor\\layout-editor.component.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "layout-editor\\position.ts"
+                },
+                {
+                    "blank": 3,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "login.service.spec.ts"
+                },
+                {
+                    "blank": 3,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "login.service.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 4,
+                    "comment": 0,
+                    "filename": "login\\login.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "login\\login.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "login\\login.component.spec.ts"
+                },
+                {
+                    "blank": 5,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "login\\login.component.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "main-nav\\main-nav.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 37,
+                    "comment": 0,
+                    "filename": "main-nav\\main-nav.component.html"
+                },
+                {
+                    "blank": 6,
+                    "code": 28,
+                    "comment": 1,
+                    "filename": "main-nav\\main-nav.component.spec.ts"
+                },
+                {
+                    "blank": 5,
+                    "code": 16,
+                    "comment": 1,
+                    "filename": "main-nav\\main-nav.component.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "opening-hours-dialog\\opening-hours-dialog.component.css"
+                },
+                {
+                    "blank": 3,
+                    "code": 46,
+                    "comment": 0,
+                    "filename": "opening-hours-dialog\\opening-hours-dialog.component.html"
+                },
+                {
+                    "blank": 7,
+                    "code": 33,
+                    "comment": 1,
+                    "filename": "opening-hours-dialog\\opening-hours-dialog.component.spec.ts"
+                },
+                {
+                    "blank": 11,
+                    "code": 45,
+                    "comment": 1,
+                    "filename": "opening-hours-dialog\\opening-hours-dialog.component.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 16,
+                    "comment": 1,
+                    "filename": "opening-hours.service.spec.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 16,
+                    "comment": 0,
+                    "filename": "opening-hours.service.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "opening-hours\\opening-hours.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 21,
+                    "comment": 5,
+                    "filename": "opening-hours\\opening-hours.component.html"
+                },
+                {
+                    "blank": 8,
+                    "code": 39,
+                    "comment": 2,
+                    "filename": "opening-hours\\opening-hours.component.spec.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 25,
+                    "comment": 14,
+                    "filename": "opening-hours\\opening-hours.component.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 39,
+                    "comment": 0,
+                    "filename": "prediction.service.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 16,
+                    "comment": 0,
+                    "filename": "prediction\\prediction.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 25,
+                    "comment": 0,
+                    "filename": "prediction\\prediction.component.html"
+                },
+                {
+                    "blank": 6,
+                    "code": 30,
+                    "comment": 1,
+                    "filename": "prediction\\prediction.component.spec.ts"
+                },
+                {
+                    "blank": 5,
+                    "code": 126,
+                    "comment": 0,
+                    "filename": "prediction\\prediction.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 4,
+                    "comment": 0,
+                    "filename": "reservation-dialog\\reservation-dialog.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "reservation-dialog\\reservation-dialog.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "reservation-dialog\\reservation-dialog.component.spec.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "reservation-dialog\\reservation-dialog.component.ts"
+                },
+                {
+                    "blank": 3,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "reservation.service.spec.ts"
+                },
+                {
+                    "blank": 5,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "reservation.service.ts"
+                },
+                {
+                    "blank": 3,
+                    "code": 16,
+                    "comment": 0,
+                    "filename": "reservation\\reservation.component.css"
+                },
+                {
+                    "blank": 2,
+                    "code": 55,
+                    "comment": 0,
+                    "filename": "reservation\\reservation.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "reservation\\reservation.component.spec.ts"
+                },
+                {
+                    "blank": 10,
+                    "code": 73,
+                    "comment": 0,
+                    "filename": "reservation\\reservation.component.ts"
+                }
+            ]
+        }
+    ]
+}

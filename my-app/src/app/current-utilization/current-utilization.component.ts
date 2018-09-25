@@ -121,7 +121,7 @@ export class CurrentUtilizationComponent implements OnInit {
                   stateIconURL = "assets/img/current-utilization-icons/linux_free.svg";
                   break;
               case this.LINUX_OCCUPIED:
-                  stateIconURL = "assets/img/current-utilization-icons/win_busy.svg";
+                  stateIconURL = "assets/img/current-utilization-icons/linux_busy.svg";
                   break;
               default:
                   console.log("could not set image of element: " + element.id);
