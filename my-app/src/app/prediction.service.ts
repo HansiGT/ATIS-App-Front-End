@@ -8,7 +8,7 @@ export class PredictionService {
   constructor(private _http: HttpClient) { }
 
   getPrediction(date) {
-    var url = 'https://utilization.cm.tm.kit.edu/prediction/date/' + date;
+    var url = 'https://bff-atis-app.cm.tm.kit.edu/prediction/slow/' + date;
     return this._http.get(url);
   }
 
@@ -37,7 +37,7 @@ export class PredictionService {
         weekDayString = 'SATURDAY';
         break;
     }
-    var url = 'https://utilization.cm.tm.kit.edu/prediction/day/' + weekDayString;
+    var url = 'https://bff-atis-app.cm.tm.kit.edu/prediction/fast/' + weekDayString;
     return this._http.get(url);
   }
 }

@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Wed Sep 19 11:46:56 CEST 2018
+#Thu Sep 27 23:54:56 CEST 2018
 17.baseType=DIRECTORY
 4.path=www/assets/img/current-utilization-icons/printer.svg
 25.base=D\:\\PSE\\dev\\ui_atis_app\\ATIS_IOSB\\platforms\\android\\app\\build\\intermediates\\assets\\debug
@@ -15,7 +15,7 @@
 16.set=ASSET
 count=29
 6.base=D\:\\PSE\\dev\\ui_atis_app\\ATIS_IOSB\\platforms\\android\\app\\build\\intermediates\\assets\\debug
-13.path=www/assets/img/homePageIcons/img_curr_util.png
+13.path=www/runtime.a66f828dca56eeb90e02.js
 6.baseType=DIRECTORY
 2.set=ASSET
 5.path=www/cordova.js
@@ -32,7 +32,7 @@ count=29
 15.base=D\:\\PSE\\dev\\ui_atis_app\\ATIS_IOSB\\platforms\\android\\app\\build\\intermediates\\assets\\debug
 26.set=ASSET
 7.base=D\:\\PSE\\dev\\ui_atis_app\\ATIS_IOSB\\platforms\\android\\app\\build\\intermediates\\assets\\debug
-14.path=www/assets/img/homePageIcons/img_reservation.png
+14.path=www/assets/img/homePageIcons/img_curr_util.png
 15.set=ASSET
 6.path=www/assets/img/current-utilization-icons/win_busy.svg
 27.base=D\:\\PSE\\dev\\ui_atis_app\\ATIS_IOSB\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
@@ -50,7 +50,7 @@ count=29
 20.path=www/assets/img/reservationLayout.PNG
 16.base=D\:\\PSE\\dev\\ui_atis_app\\ATIS_IOSB\\platforms\\android\\app\\build\\intermediates\\assets\\debug
 8.base=D\:\\PSE\\dev\\ui_atis_app\\ATIS_IOSB\\platforms\\android\\app\\build\\intermediates\\assets\\debug
-15.path=www/main.daec37ac60d43c5de295.js
+15.path=www/assets/img/homePageIcons/img_reservation.png
 14.baseType=DIRECTORY
 25.set=ASSET
 17.base=D\:\\PSE\\dev\\ui_atis_app\\ATIS_IOSB\\platforms\\android\\app\\build\\intermediates\\assets\\debug
@@ -96,7 +96,7 @@ count=29
 9.path=www/assets/img/current-utilization-icons/laptop.png
 18.path=www/assets/img/current-utilization-icons/win_free.svg
 4.base=D\:\\PSE\\dev\\ui_atis_app\\ATIS_IOSB\\platforms\\android\\app\\build\\intermediates\\assets\\debug
-11.path=www/assets/img/homePageIcons/img_layout_editor.png
+11.path=www/main.5d50718b82ca063802c7.js
 23.set=ASSET
 9.set=ASSET
 3.path=www/cordova-js-src/platform.js
@@ -116,4 +116,4 @@ count=29
 15.baseType=DIRECTORY
 3.set=ASSET
 5.base=D\:\\PSE\\dev\\ui_atis_app\\ATIS_IOSB\\platforms\\android\\app\\build\\intermediates\\assets\\debug
-12.path=www/runtime.a66f828dca56eeb90e02.js
+12.path=www/assets/img/homePageIcons/img_layout_editor.png
